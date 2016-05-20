@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C71DC57C1CEF99F900EACB3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C71DC57B1CEF99F900EACB3D /* main.m */; };
+		C71DC57F1CEF99F900EACB3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C71DC57E1CEF99F900EACB3D /* AppDelegate.m */; };
+		C71DC5821CEF99F900EACB3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71DC5811CEF99F900EACB3D /* ViewController.m */; };
+		C71DC5851CEF99F900EACB3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71DC5831CEF99F900EACB3D /* Main.storyboard */; };
+		C71DC5871CEF99F900EACB3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71DC5861CEF99F900EACB3D /* Assets.xcassets */; };
+		C71DC58A1CEF99F900EACB3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71DC5881CEF99F900EACB3D /* LaunchScreen.storyboard */; };
+		C71DC5951CEF99F900EACB3D /* MaltCoLotteryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71DC5941CEF99F900EACB3D /* MaltCoLotteryTests.m */; };
+		C71DC5A01CEF99F900EACB3D /* MaltCoLotteryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71DC59F1CEF99F900EACB3D /* MaltCoLotteryUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C71DC5911CEF99F900EACB3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C71DC56F1CEF99F900EACB3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C71DC5761CEF99F900EACB3D;
+			remoteInfo = MaltCoLottery;
+		};
+		C71DC59C1CEF99F900EACB3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C71DC56F1CEF99F900EACB3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C71DC5761CEF99F900EACB3D;
+			remoteInfo = MaltCoLottery;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C71DC5771CEF99F900EACB3D /* MaltCoLottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaltCoLottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C71DC57B1CEF99F900EACB3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C71DC57D1CEF99F900EACB3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C71DC57E1CEF99F900EACB3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C71DC5801CEF99F900EACB3D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C71DC5811CEF99F900EACB3D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C71DC5841CEF99F900EACB3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C71DC5861CEF99F900EACB3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C71DC5891CEF99F900EACB3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C71DC58B1CEF99F900EACB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C71DC5901CEF99F900EACB3D /* MaltCoLotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaltCoLotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C71DC5941CEF99F900EACB3D /* MaltCoLotteryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaltCoLotteryTests.m; sourceTree = "<group>"; };
+		C71DC5961CEF99F900EACB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C71DC59B1CEF99F900EACB3D /* MaltCoLotteryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaltCoLotteryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C71DC59F1CEF99F900EACB3D /* MaltCoLotteryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaltCoLotteryUITests.m; sourceTree = "<group>"; };
+		C71DC5A11CEF99F900EACB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C71DC5741CEF99F900EACB3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C71DC58D1CEF99F900EACB3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C71DC5981CEF99F900EACB3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C71DC56E1CEF99F900EACB3D = {
+			isa = PBXGroup;
+			children = (
+				C71DC5791CEF99F900EACB3D /* MaltCoLottery */,
+				C71DC5931CEF99F900EACB3D /* MaltCoLotteryTests */,
+				C71DC59E1CEF99F900EACB3D /* MaltCoLotteryUITests */,
+				C71DC5781CEF99F900EACB3D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C71DC5781CEF99F900EACB3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C71DC5771CEF99F900EACB3D /* MaltCoLottery.app */,
+				C71DC5901CEF99F900EACB3D /* MaltCoLotteryTests.xctest */,
+				C71DC59B1CEF99F900EACB3D /* MaltCoLotteryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C71DC5791CEF99F900EACB3D /* MaltCoLottery */ = {
+			isa = PBXGroup;
+			children = (
+				C71DC57D1CEF99F900EACB3D /* AppDelegate.h */,
+				C71DC57E1CEF99F900EACB3D /* AppDelegate.m */,
+				C71DC5801CEF99F900EACB3D /* ViewController.h */,
+				C71DC5811CEF99F900EACB3D /* ViewController.m */,
+				C71DC5831CEF99F900EACB3D /* Main.storyboard */,
+				C71DC5861CEF99F900EACB3D /* Assets.xcassets */,
+				C71DC5881CEF99F900EACB3D /* LaunchScreen.storyboard */,
+				C71DC58B1CEF99F900EACB3D /* Info.plist */,
+				C71DC57A1CEF99F900EACB3D /* Supporting Files */,
+			);
+			path = MaltCoLottery;
+			sourceTree = "<group>";
+		};
+		C71DC57A1CEF99F900EACB3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C71DC57B1CEF99F900EACB3D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C71DC5931CEF99F900EACB3D /* MaltCoLotteryTests */ = {
+			isa = PBXGroup;
+			children = (
+				C71DC5941CEF99F900EACB3D /* MaltCoLotteryTests.m */,
+				C71DC5961CEF99F900EACB3D /* Info.plist */,
+			);
+			path = MaltCoLotteryTests;
+			sourceTree = "<group>";
+		};
+		C71DC59E1CEF99F900EACB3D /* MaltCoLotteryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C71DC59F1CEF99F900EACB3D /* MaltCoLotteryUITests.m */,
+				C71DC5A11CEF99F900EACB3D /* Info.plist */,
+			);
+			path = MaltCoLotteryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C71DC5761CEF99F900EACB3D /* MaltCoLottery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C71DC5A41CEF99F900EACB3D /* Build configuration list for PBXNativeTarget "MaltCoLottery" */;
+			buildPhases = (
+				C71DC5731CEF99F900EACB3D /* Sources */,
+				C71DC5741CEF99F900EACB3D /* Frameworks */,
+				C71DC5751CEF99F900EACB3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MaltCoLottery;
+			productName = MaltCoLottery;
+			productReference = C71DC5771CEF99F900EACB3D /* MaltCoLottery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C71DC58F1CEF99F900EACB3D /* MaltCoLotteryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C71DC5A71CEF99F900EACB3D /* Build configuration list for PBXNativeTarget "MaltCoLotteryTests" */;
+			buildPhases = (
+				C71DC58C1CEF99F900EACB3D /* Sources */,
+				C71DC58D1CEF99F900EACB3D /* Frameworks */,
+				C71DC58E1CEF99F900EACB3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C71DC5921CEF99F900EACB3D /* PBXTargetDependency */,
+			);
+			name = MaltCoLotteryTests;
+			productName = MaltCoLotteryTests;
+			productReference = C71DC5901CEF99F900EACB3D /* MaltCoLotteryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C71DC59A1CEF99F900EACB3D /* MaltCoLotteryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C71DC5AA1CEF99F900EACB3D /* Build configuration list for PBXNativeTarget "MaltCoLotteryUITests" */;
+			buildPhases = (
+				C71DC5971CEF99F900EACB3D /* Sources */,
+				C71DC5981CEF99F900EACB3D /* Frameworks */,
+				C71DC5991CEF99F900EACB3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C71DC59D1CEF99F900EACB3D /* PBXTargetDependency */,
+			);
+			name = MaltCoLotteryUITests;
+			productName = MaltCoLotteryUITests;
+			productReference = C71DC59B1CEF99F900EACB3D /* MaltCoLotteryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C71DC56F1CEF99F900EACB3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Peter Molnar";
+				TargetAttributes = {
+					C71DC5761CEF99F900EACB3D = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					C71DC58F1CEF99F900EACB3D = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = C71DC5761CEF99F900EACB3D;
+					};
+					C71DC59A1CEF99F900EACB3D = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = C71DC5761CEF99F900EACB3D;
+					};
+				};
+			};
+			buildConfigurationList = C71DC5721CEF99F900EACB3D /* Build configuration list for PBXProject "MaltCoLottery" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C71DC56E1CEF99F900EACB3D;
+			productRefGroup = C71DC5781CEF99F900EACB3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C71DC5761CEF99F900EACB3D /* MaltCoLottery */,
+				C71DC58F1CEF99F900EACB3D /* MaltCoLotteryTests */,
+				C71DC59A1CEF99F900EACB3D /* MaltCoLotteryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C71DC5751CEF99F900EACB3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C71DC58A1CEF99F900EACB3D /* LaunchScreen.storyboard in Resources */,
+				C71DC5871CEF99F900EACB3D /* Assets.xcassets in Resources */,
+				C71DC5851CEF99F900EACB3D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C71DC58E1CEF99F900EACB3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C71DC5991CEF99F900EACB3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C71DC5731CEF99F900EACB3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C71DC5821CEF99F900EACB3D /* ViewController.m in Sources */,
+				C71DC57F1CEF99F900EACB3D /* AppDelegate.m in Sources */,
+				C71DC57C1CEF99F900EACB3D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C71DC58C1CEF99F900EACB3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C71DC5951CEF99F900EACB3D /* MaltCoLotteryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C71DC5971CEF99F900EACB3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C71DC5A01CEF99F900EACB3D /* MaltCoLotteryUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C71DC5921CEF99F900EACB3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C71DC5761CEF99F900EACB3D /* MaltCoLottery */;
+			targetProxy = C71DC5911CEF99F900EACB3D /* PBXContainerItemProxy */;
+		};
+		C71DC59D1CEF99F900EACB3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C71DC5761CEF99F900EACB3D /* MaltCoLottery */;
+			targetProxy = C71DC59C1CEF99F900EACB3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C71DC5831CEF99F900EACB3D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C71DC5841CEF99F900EACB3D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C71DC5881CEF99F900EACB3D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C71DC5891CEF99F900EACB3D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C71DC5A21CEF99F900EACB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C71DC5A31CEF99F900EACB3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C71DC5A51CEF99F900EACB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MaltCoLottery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.petermolnar.MaltCoLottery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C71DC5A61CEF99F900EACB3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MaltCoLottery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.petermolnar.MaltCoLottery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C71DC5A81CEF99F900EACB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MaltCoLotteryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.petermolnar.MaltCoLotteryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MaltCoLottery.app/MaltCoLottery";
+			};
+			name = Debug;
+		};
+		C71DC5A91CEF99F900EACB3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MaltCoLotteryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.petermolnar.MaltCoLotteryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MaltCoLottery.app/MaltCoLottery";
+			};
+			name = Release;
+		};
+		C71DC5AB1CEF99F900EACB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MaltCoLotteryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.petermolnar.MaltCoLotteryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MaltCoLottery;
+			};
+			name = Debug;
+		};
+		C71DC5AC1CEF99F900EACB3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MaltCoLotteryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.petermolnar.MaltCoLotteryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MaltCoLottery;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C71DC5721CEF99F900EACB3D /* Build configuration list for PBXProject "MaltCoLottery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C71DC5A21CEF99F900EACB3D /* Debug */,
+				C71DC5A31CEF99F900EACB3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C71DC5A41CEF99F900EACB3D /* Build configuration list for PBXNativeTarget "MaltCoLottery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C71DC5A51CEF99F900EACB3D /* Debug */,
+				C71DC5A61CEF99F900EACB3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C71DC5A71CEF99F900EACB3D /* Build configuration list for PBXNativeTarget "MaltCoLotteryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C71DC5A81CEF99F900EACB3D /* Debug */,
+				C71DC5A91CEF99F900EACB3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C71DC5AA1CEF99F900EACB3D /* Build configuration list for PBXNativeTarget "MaltCoLotteryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C71DC5AB1CEF99F900EACB3D /* Debug */,
+				C71DC5AC1CEF99F900EACB3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C71DC56F1CEF99F900EACB3D /* Project object */;
+}
