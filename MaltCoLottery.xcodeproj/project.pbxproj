@@ -13,8 +13,23 @@
 		C71DC5851CEF99F900EACB3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71DC5831CEF99F900EACB3D /* Main.storyboard */; };
 		C71DC5871CEF99F900EACB3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71DC5861CEF99F900EACB3D /* Assets.xcassets */; };
 		C71DC58A1CEF99F900EACB3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71DC5881CEF99F900EACB3D /* LaunchScreen.storyboard */; };
-		C71DC5951CEF99F900EACB3D /* MaltCoLotteryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71DC5941CEF99F900EACB3D /* MaltCoLotteryTests.m */; };
 		C71DC5A01CEF99F900EACB3D /* MaltCoLotteryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71DC59F1CEF99F900EACB3D /* MaltCoLotteryUITests.m */; };
+		C71DC5AF1CEF9A1200EACB3D /* PMODrawDateGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C71DC5AE1CEF9A1200EACB3D /* PMODrawDateGenerator.m */; };
+		C75CF0F31CEFA5E000FF9424 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = C75CF0EE1CEFA5E000FF9424 /* TFHpple.m */; };
+		C75CF0F41CEFA5E000FF9424 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C75CF0F01CEFA5E000FF9424 /* TFHppleElement.m */; };
+		C75CF0F51CEFA5E000FF9424 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C75CF0F21CEFA5E000FF9424 /* XPathQuery.m */; };
+		C779227D1D5FB36F0075319F /* PMODataDownloaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C779227C1D5FB36F0075319F /* PMODataDownloaderTest.m */; };
+		C7A15E1A1D5DA03B0067C239 /* PMONumberStats.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A15E191D5DA03B0067C239 /* PMONumberStats.m */; };
+		C7A838E51D5856050095B261 /* PMODrawModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A838E41D5856050095B261 /* PMODrawModelController.m */; };
+		C7A838EC1D58570E0095B261 /* PMODrawFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A838EB1D58570E0095B261 /* PMODrawFactory.m */; };
+		C7A838EF1D58595F0095B261 /* PMOHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A838EE1D58595F0095B261 /* PMOHTMLParser.m */; };
+		C7AAF7F01D52457200D98AD3 /* PMODrawURLGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7EF1D52457200D98AD3 /* PMODrawURLGenerator.m */; };
+		C7AAF7F51D54683D00D98AD3 /* PMODataDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7F41D54683D00D98AD3 /* PMODataDownloader.m */; };
+		C7AAF7FD1D5726B500D98AD3 /* PMODraw.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7FC1D5726B500D98AD3 /* PMODraw.m */; };
+		C7AAF7FF1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7FE1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m */; };
+		C7D12FC61D59AA3400D47DF5 /* PMODateGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */; };
+		C7D12FC91D59ABF100D47DF5 /* PMODrawStorageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */; };
+		C7F59BC91D5E67A8008582C2 /* PMODrawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +61,40 @@
 		C71DC5891CEF99F900EACB3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C71DC58B1CEF99F900EACB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C71DC5901CEF99F900EACB3D /* MaltCoLotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaltCoLotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C71DC5941CEF99F900EACB3D /* MaltCoLotteryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaltCoLotteryTests.m; sourceTree = "<group>"; };
 		C71DC5961CEF99F900EACB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C71DC59B1CEF99F900EACB3D /* MaltCoLotteryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaltCoLotteryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71DC59F1CEF99F900EACB3D /* MaltCoLotteryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaltCoLotteryUITests.m; sourceTree = "<group>"; };
 		C71DC5A11CEF99F900EACB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C71DC5AD1CEF9A1200EACB3D /* PMODrawDateGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawDateGenerator.h; sourceTree = "<group>"; };
+		C71DC5AE1CEF9A1200EACB3D /* PMODrawDateGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawDateGenerator.m; sourceTree = "<group>"; };
+		C75CF0ED1CEFA5E000FF9424 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		C75CF0EE1CEFA5E000FF9424 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		C75CF0EF1CEFA5E000FF9424 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		C75CF0F01CEFA5E000FF9424 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		C75CF0F11CEFA5E000FF9424 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		C75CF0F21CEFA5E000FF9424 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		C779227C1D5FB36F0075319F /* PMODataDownloaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODataDownloaderTest.m; sourceTree = "<group>"; };
+		C7A15E181D5DA03B0067C239 /* PMONumberStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMONumberStats.h; sourceTree = "<group>"; };
+		C7A15E191D5DA03B0067C239 /* PMONumberStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMONumberStats.m; sourceTree = "<group>"; };
+		C7A838E31D5856050095B261 /* PMODrawModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawModelController.h; sourceTree = "<group>"; };
+		C7A838E41D5856050095B261 /* PMODrawModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawModelController.m; sourceTree = "<group>"; };
+		C7A838EA1D58570E0095B261 /* PMODrawFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawFactory.h; sourceTree = "<group>"; };
+		C7A838EB1D58570E0095B261 /* PMODrawFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawFactory.m; sourceTree = "<group>"; };
+		C7A838ED1D58595F0095B261 /* PMOHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOHTMLParser.h; sourceTree = "<group>"; };
+		C7A838EE1D58595F0095B261 /* PMOHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOHTMLParser.m; sourceTree = "<group>"; };
+		C7AAF7EE1D52457200D98AD3 /* PMODrawURLGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawURLGenerator.h; sourceTree = "<group>"; };
+		C7AAF7EF1D52457200D98AD3 /* PMODrawURLGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawURLGenerator.m; sourceTree = "<group>"; };
+		C7AAF7F31D54683D00D98AD3 /* PMODataDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODataDownloader.h; sourceTree = "<group>"; };
+		C7AAF7F41D54683D00D98AD3 /* PMODataDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODataDownloader.m; sourceTree = "<group>"; };
+		C7AAF7F81D54696E00D98AD3 /* PMODataDownloadNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMODataDownloadNotifications.h; sourceTree = "<group>"; };
+		C7AAF7F91D54696E00D98AD3 /* PMOExecutionNotifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMOExecutionNotifier.h; sourceTree = "<group>"; };
+		C7AAF7FB1D5726B500D98AD3 /* PMODraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODraw.h; sourceTree = "<group>"; };
+		C7AAF7FC1D5726B500D98AD3 /* PMODraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODraw.m; sourceTree = "<group>"; };
+		C7AAF7FE1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOUrlGeneratorTests.m; sourceTree = "<group>"; };
+		C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODateGeneratorTests.m; sourceTree = "<group>"; };
+		C7D12FC71D59ABF100D47DF5 /* PMODrawStorageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawStorageFactory.h; sourceTree = "<group>"; };
+		C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawStorageFactory.m; sourceTree = "<group>"; };
+		C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +145,13 @@
 		C71DC5791CEF99F900EACB3D /* MaltCoLottery */ = {
 			isa = PBXGroup;
 			children = (
+				C7A838E91D5856680095B261 /* Factories */,
+				C7A838E21D5855E40095B261 /* ModelControllers */,
+				C7AAF7FA1D57027700D98AD3 /* Models */,
+				C7AAF7F71D54694B00D98AD3 /* Headers and protocolls */,
+				C7AAF7F61D54684800D98AD3 /* HTML Parser */,
+				C7AAF7F21D54680A00D98AD3 /* Network Operations */,
+				C7AAF7F11D52466000D98AD3 /* Generators */,
 				C71DC57D1CEF99F900EACB3D /* AppDelegate.h */,
 				C71DC57E1CEF99F900EACB3D /* AppDelegate.m */,
 				C71DC5801CEF99F900EACB3D /* ViewController.h */,
@@ -125,7 +176,10 @@
 		C71DC5931CEF99F900EACB3D /* MaltCoLotteryTests */ = {
 			isa = PBXGroup;
 			children = (
-				C71DC5941CEF99F900EACB3D /* MaltCoLotteryTests.m */,
+				C779227C1D5FB36F0075319F /* PMODataDownloaderTest.m */,
+				C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */,
+				C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */,
+				C7AAF7FE1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m */,
 				C71DC5961CEF99F900EACB3D /* Info.plist */,
 			);
 			path = MaltCoLotteryTests;
@@ -138,6 +192,81 @@
 				C71DC5A11CEF99F900EACB3D /* Info.plist */,
 			);
 			path = MaltCoLotteryUITests;
+			sourceTree = "<group>";
+		};
+		C7A838E21D5855E40095B261 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7A838E31D5856050095B261 /* PMODrawModelController.h */,
+				C7A838E41D5856050095B261 /* PMODrawModelController.m */,
+			);
+			name = ModelControllers;
+			sourceTree = "<group>";
+		};
+		C7A838E91D5856680095B261 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				C7D12FC71D59ABF100D47DF5 /* PMODrawStorageFactory.h */,
+				C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */,
+				C7A838EA1D58570E0095B261 /* PMODrawFactory.h */,
+				C7A838EB1D58570E0095B261 /* PMODrawFactory.m */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		C7AAF7F11D52466000D98AD3 /* Generators */ = {
+			isa = PBXGroup;
+			children = (
+				C7AAF7EE1D52457200D98AD3 /* PMODrawURLGenerator.h */,
+				C7AAF7EF1D52457200D98AD3 /* PMODrawURLGenerator.m */,
+				C71DC5AD1CEF9A1200EACB3D /* PMODrawDateGenerator.h */,
+				C71DC5AE1CEF9A1200EACB3D /* PMODrawDateGenerator.m */,
+			);
+			name = Generators;
+			sourceTree = "<group>";
+		};
+		C7AAF7F21D54680A00D98AD3 /* Network Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C7AAF7F31D54683D00D98AD3 /* PMODataDownloader.h */,
+				C7AAF7F41D54683D00D98AD3 /* PMODataDownloader.m */,
+			);
+			name = "Network Operations";
+			sourceTree = "<group>";
+		};
+		C7AAF7F61D54684800D98AD3 /* HTML Parser */ = {
+			isa = PBXGroup;
+			children = (
+				C75CF0ED1CEFA5E000FF9424 /* TFHpple.h */,
+				C75CF0EE1CEFA5E000FF9424 /* TFHpple.m */,
+				C75CF0EF1CEFA5E000FF9424 /* TFHppleElement.h */,
+				C75CF0F01CEFA5E000FF9424 /* TFHppleElement.m */,
+				C75CF0F11CEFA5E000FF9424 /* XPathQuery.h */,
+				C75CF0F21CEFA5E000FF9424 /* XPathQuery.m */,
+				C7A838ED1D58595F0095B261 /* PMOHTMLParser.h */,
+				C7A838EE1D58595F0095B261 /* PMOHTMLParser.m */,
+			);
+			name = "HTML Parser";
+			sourceTree = "<group>";
+		};
+		C7AAF7F71D54694B00D98AD3 /* Headers and protocolls */ = {
+			isa = PBXGroup;
+			children = (
+				C7AAF7F81D54696E00D98AD3 /* PMODataDownloadNotifications.h */,
+				C7AAF7F91D54696E00D98AD3 /* PMOExecutionNotifier.h */,
+			);
+			name = "Headers and protocolls";
+			sourceTree = "<group>";
+		};
+		C7AAF7FA1D57027700D98AD3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7A15E181D5DA03B0067C239 /* PMONumberStats.h */,
+				C7A15E191D5DA03B0067C239 /* PMONumberStats.m */,
+				C7AAF7FB1D5726B500D98AD3 /* PMODraw.h */,
+				C7AAF7FC1D5726B500D98AD3 /* PMODraw.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +399,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7A838E51D5856050095B261 /* PMODrawModelController.m in Sources */,
+				C7A838EC1D58570E0095B261 /* PMODrawFactory.m in Sources */,
+				C7A838EF1D58595F0095B261 /* PMOHTMLParser.m in Sources */,
+				C75CF0F41CEFA5E000FF9424 /* TFHppleElement.m in Sources */,
+				C75CF0F51CEFA5E000FF9424 /* XPathQuery.m in Sources */,
+				C75CF0F31CEFA5E000FF9424 /* TFHpple.m in Sources */,
+				C7AAF7F51D54683D00D98AD3 /* PMODataDownloader.m in Sources */,
 				C71DC5821CEF99F900EACB3D /* ViewController.m in Sources */,
+				C7A15E1A1D5DA03B0067C239 /* PMONumberStats.m in Sources */,
+				C7AAF7F01D52457200D98AD3 /* PMODrawURLGenerator.m in Sources */,
+				C7AAF7FD1D5726B500D98AD3 /* PMODraw.m in Sources */,
 				C71DC57F1CEF99F900EACB3D /* AppDelegate.m in Sources */,
+				C71DC5AF1CEF9A1200EACB3D /* PMODrawDateGenerator.m in Sources */,
 				C71DC57C1CEF99F900EACB3D /* main.m in Sources */,
+				C7D12FC91D59ABF100D47DF5 /* PMODrawStorageFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +421,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71DC5951CEF99F900EACB3D /* MaltCoLotteryTests.m in Sources */,
+				C7AAF7FF1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m in Sources */,
+				C7F59BC91D5E67A8008582C2 /* PMODrawTests.m in Sources */,
+				C7D12FC61D59AA3400D47DF5 /* PMODateGeneratorTests.m in Sources */,
+				C779227D1D5FB36F0075319F /* PMODataDownloaderTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,8 +559,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = MaltCoLottery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.petermolnar.MaltCoLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -426,8 +572,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = MaltCoLottery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.petermolnar.MaltCoLottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -498,6 +646,7 @@
 				C71DC5A61CEF99F900EACB3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C71DC5A71CEF99F900EACB3D /* Build configuration list for PBXNativeTarget "MaltCoLotteryTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +655,7 @@
 				C71DC5A91CEF99F900EACB3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C71DC5AA1CEF99F900EACB3D /* Build configuration list for PBXNativeTarget "MaltCoLotteryUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +664,7 @@
 				C71DC5AC1CEF99F900EACB3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

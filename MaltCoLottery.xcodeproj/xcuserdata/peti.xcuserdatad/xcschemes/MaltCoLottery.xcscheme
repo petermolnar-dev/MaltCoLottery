@@ -38,16 +38,6 @@
                ReferencedContainer = "container:MaltCoLottery.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C71DC59A1CEF99F900EACB3D"
-               BuildableName = "MaltCoLotteryUITests.xctest"
-               BlueprintName = "MaltCoLotteryUITests"
-               ReferencedContainer = "container:MaltCoLottery.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
