@@ -21,6 +21,7 @@
     self.draw = [[PMODraw alloc] init];
     self.draw.drawID = @"20160812";
     self.draw.numbers = @[@3, @7, @46, @23, @13];
+    
 }
 
 - (void)tearDown {
