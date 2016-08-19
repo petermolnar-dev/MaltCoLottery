@@ -19,6 +19,8 @@
 		C75CF0F41CEFA5E000FF9424 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C75CF0F01CEFA5E000FF9424 /* TFHppleElement.m */; };
 		C75CF0F51CEFA5E000FF9424 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C75CF0F21CEFA5E000FF9424 /* XPathQuery.m */; };
 		C779227D1D5FB36F0075319F /* PMODataDownloaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C779227C1D5FB36F0075319F /* PMODataDownloaderTest.m */; };
+		C779227F1D6106600075319F /* PMOHTMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C779227E1D6106600075319F /* PMOHTMLParserTests.m */; };
+		C77922831D61132F0075319F /* PMOCalendarOperatedAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = C77922821D61132F0075319F /* PMOCalendarOperatedAbstract.m */; };
 		C7A15E1A1D5DA03B0067C239 /* PMONumberStats.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A15E191D5DA03B0067C239 /* PMONumberStats.m */; };
 		C7A838E51D5856050095B261 /* PMODrawModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A838E41D5856050095B261 /* PMODrawModelController.m */; };
 		C7A838EC1D58570E0095B261 /* PMODrawFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A838EB1D58570E0095B261 /* PMODrawFactory.m */; };
@@ -74,6 +76,9 @@
 		C75CF0F11CEFA5E000FF9424 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		C75CF0F21CEFA5E000FF9424 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		C779227C1D5FB36F0075319F /* PMODataDownloaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODataDownloaderTest.m; sourceTree = "<group>"; };
+		C779227E1D6106600075319F /* PMOHTMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOHTMLParserTests.m; sourceTree = "<group>"; };
+		C77922811D61132F0075319F /* PMOCalendarOperatedAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOCalendarOperatedAbstract.h; sourceTree = "<group>"; };
+		C77922821D61132F0075319F /* PMOCalendarOperatedAbstract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOCalendarOperatedAbstract.m; sourceTree = "<group>"; };
 		C7A15E181D5DA03B0067C239 /* PMONumberStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMONumberStats.h; sourceTree = "<group>"; };
 		C7A15E191D5DA03B0067C239 /* PMONumberStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMONumberStats.m; sourceTree = "<group>"; };
 		C7A838E31D5856050095B261 /* PMODrawModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawModelController.h; sourceTree = "<group>"; };
@@ -145,6 +150,7 @@
 		C71DC5791CEF99F900EACB3D /* MaltCoLottery */ = {
 			isa = PBXGroup;
 			children = (
+				C77922801D6113080075319F /* Abstract Classes */,
 				C7A838E91D5856680095B261 /* Factories */,
 				C7A838E21D5855E40095B261 /* ModelControllers */,
 				C7AAF7FA1D57027700D98AD3 /* Models */,
@@ -180,6 +186,7 @@
 				C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */,
 				C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */,
 				C7AAF7FE1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m */,
+				C779227E1D6106600075319F /* PMOHTMLParserTests.m */,
 				C71DC5961CEF99F900EACB3D /* Info.plist */,
 			);
 			path = MaltCoLotteryTests;
@@ -192,6 +199,15 @@
 				C71DC5A11CEF99F900EACB3D /* Info.plist */,
 			);
 			path = MaltCoLotteryUITests;
+			sourceTree = "<group>";
+		};
+		C77922801D6113080075319F /* Abstract Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C77922811D61132F0075319F /* PMOCalendarOperatedAbstract.h */,
+				C77922821D61132F0075319F /* PMOCalendarOperatedAbstract.m */,
+			);
+			name = "Abstract Classes";
 			sourceTree = "<group>";
 		};
 		C7A838E21D5855E40095B261 /* ModelControllers */ = {
@@ -405,6 +421,7 @@
 				C75CF0F41CEFA5E000FF9424 /* TFHppleElement.m in Sources */,
 				C75CF0F51CEFA5E000FF9424 /* XPathQuery.m in Sources */,
 				C75CF0F31CEFA5E000FF9424 /* TFHpple.m in Sources */,
+				C77922831D61132F0075319F /* PMOCalendarOperatedAbstract.m in Sources */,
 				C7AAF7F51D54683D00D98AD3 /* PMODataDownloader.m in Sources */,
 				C71DC5821CEF99F900EACB3D /* ViewController.m in Sources */,
 				C7A15E1A1D5DA03B0067C239 /* PMONumberStats.m in Sources */,
@@ -424,6 +441,7 @@
 				C7AAF7FF1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m in Sources */,
 				C7F59BC91D5E67A8008582C2 /* PMODrawTests.m in Sources */,
 				C7D12FC61D59AA3400D47DF5 /* PMODateGeneratorTests.m in Sources */,
+				C779227F1D6106600075319F /* PMOHTMLParserTests.m in Sources */,
 				C779227D1D5FB36F0075319F /* PMODataDownloaderTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

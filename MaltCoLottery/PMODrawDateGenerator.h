@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PMOCalendarOperatedAbstract.h"
 /*!
 Generates the possible draw dates for the MaltCo lottery (on every Wednesday).
 
@@ -16,22 +17,23 @@ The following methodes are declared:
 
 @p- (NSArray *)drawDaysFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
-@p- (NSDate *)createDateFromComponentsWithYear:(NSInteger)year withMonth:(NSInteger)month withDay:(NSInteger)day;
  */
-@interface PMODrawDateGenerator : NSObject
-
-@property (strong, nonatomic) NSString *baseURLAsString;
-
+@interface PMODrawDateGenerator : PMOCalendarOperatedAbstract
+/*!
+ @brief Generate draw days from self.firstDarawDate until today
+ 
+ @return Array of NSDates
+ */
 - (NSArray *)drawDaysUntilToday;
 
 /*!
  @brief Generate draw days between two dates
+
  @param (NSDate *)fromDate: Startdate for the generation range
  @param (NSDate *)toDate: End date for the genration range
 
  @return Array of NSDates
  */
 - (NSArray *)drawDaysFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
-- (NSDate *)createDateFromComponentsWithYear:(NSInteger)year withMonth:(NSInteger)month withDay:(NSInteger)day;
 
 @end

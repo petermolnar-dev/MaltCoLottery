@@ -212,7 +212,7 @@
 					<key>fillType</key>
 					<integer>0</integer>
 					<key>frame</key>
-					<string>{{512, 615}, {207, 128}}</string>
+					<string>{{497, 627}, {207, 128}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -321,9 +321,8 @@
 					eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBc
 					cGFyZGlybmF0dXJhbFxwYXJ0aWdodGVuZmFj
 					dG9yMAoKXGYwXGZzMjAgXGNmMCBcQ29jb2FM
-					aWdhdHVyZTAgLSBjcmVhdGVEcmF3TW9kZWxD
-					b250cm9sbGVyXAotIGdlbmVyYXRlRHJhd0lE
-					fQ==
+					aWdhdHVyZTAgLSBjcmVhdGVEcmF3OmRyYXdE
+					YXRlXAotIGdlbmVyYXRlRHJhd0lEfQ==
 					</data>
 					<key>attributedText3Data</key>
 					<data>
@@ -932,7 +931,7 @@
 					<key>flipped</key>
 					<false/>
 					<key>frame</key>
-					<string>{{699, 282}, {-83, 333}}</string>
+					<string>{{699, 282}, {-98, 345}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -3462,7 +3461,7 @@
 					<key>flipped</key>
 					<true/>
 					<key>frame</key>
-					<string>{{616, 615}, {118, -46}}</string>
+					<string>{{601, 627}, {133, -58}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>

@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "PMODraw.h"
+#import "PMOCalendarOperatedAbstract.h"
 
-@interface PMODrawFactory : NSObject
+@interface PMODrawFactory : PMOCalendarOperatedAbstract
 
-+ (PMODraw *)createDrawFromHTMLNodes:(NSArray *)htmlNodes;
+- (PMODraw *)createDraw:(NSDate *)drawDate;
 
 @end

@@ -32,20 +32,20 @@
                                                  name:PMODataDownloaderDidDownloadEnded
                                                object:self.downloader];
     // Testcode
-    NSDictionary *drawURLList = [generator drawURLs];
-    
-    for (NSString *drawID in [drawURLList allKeys]) {
-        NSData *drawHtmlData = [NSData dataWithContentsOfURL:[drawURLList objectForKey:drawID]];
-        NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:drawHtmlData ];
-        PMODraw *newDraw = [[PMODraw alloc] init];
-        
-        if (newDraw && [numbers count]>0) {
-            newDraw.drawID = drawID;
-            newDraw.numbers = numbers;
-            [drawList addObject:newDraw];
-        }
-        
-    }
+//    NSDictionary *drawURLList = [generator drawURLs];
+//    
+//    for (NSString *drawID in [drawURLList allKeys]) {
+//        NSData *drawHtmlData = [NSData dataWithContentsOfURL:[drawURLList objectForKey:drawID]];
+//        NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:drawHtmlData ];
+//        PMODraw *newDraw = [[PMODraw alloc] init];
+//        
+//        if (newDraw && [numbers count]>0) {
+//            newDraw.drawID = drawID;
+//            newDraw.numbers = numbers;
+//            [drawList addObject:newDraw];
+//        }
+//        
+//    }
     NSLog(@"Drawlist: %@", drawList);
     return drawList;
 }

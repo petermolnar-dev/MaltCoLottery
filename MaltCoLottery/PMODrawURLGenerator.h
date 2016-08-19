@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PMOCalendarOperatedAbstract.h"
 
-@interface PMODrawURLGenerator : NSObject
+@interface PMODrawURLGenerator : PMOCalendarOperatedAbstract
 
-@property (weak, nonatomic) NSArray<NSDate *> *drawDates;
-
-- (NSDictionary *)drawURLs;
+- (NSURL *)generateDrawURLFromDate:(NSDate *)drawDate;
 
 @end

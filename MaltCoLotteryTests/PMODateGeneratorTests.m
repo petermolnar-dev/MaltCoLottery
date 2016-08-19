@@ -17,6 +17,7 @@
 
 - (void)setUp {
     [super setUp];
+    self.generator = [[PMODrawDateGenerator alloc] init];
 }
 
 - (void)tearDown {
@@ -24,6 +25,22 @@
     [super tearDown];
 }
 
+- (void)testNormalRangeOfDates {
+    NSDate *fromDate = [self.generator createDateFromComponentsWithYear:2004 withMonth:1 withDay:7];
+    NSDate *toDate = [self.generator createDateFromComponentsWithYear:2004 withMonth:2 withDay:7];
+    NSArray *generatedDates = [self.generator drawDaysFromDate:fromDate toDate:toDate];
+    
+    XCTAssertTrue([generatedDates count]==5);
+}
+
+- (void)testRangeWithPublicHolidays {
+    NSDate *fromDate = [self.generator createDateFromComponentsWithYear:2016 withMonth:2 withDay:5];
+    NSDate *toDate = [self.generator createDateFromComponentsWithYear:2016 withMonth:2 withDay:12];
+    NSArray *generatedDates = [self.generator drawDaysFromDate:fromDate toDate:toDate];
+
+    XCTAssertTrue([generatedDates count]==3);
+
+}
 
 
 @end
