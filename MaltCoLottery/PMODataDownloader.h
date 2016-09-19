@@ -11,10 +11,10 @@
 #import "PMOExecutionNotifier.h"
 #import "PMODataDownloadNotifications.h"
 
-@interface PMODataDownloader : UIViewController <PMOExecutionNotifier>
+@interface PMODataDownloader : NSObject <PMOExecutionNotifier>
 
 @property (strong, nonatomic) NSURLSession *session;
-
+- (instancetype)initWithDrawID:(NSString *)drawID NS_DESIGNATED_INITIALIZER;
 - (void)downloadDataFromURL:(NSURL *)sourceURL;
 
 @end

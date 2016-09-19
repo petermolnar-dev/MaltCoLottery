@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PMODraw.h"
+#import "PMODrawModelController.h"
 #import "PMOCalendarOperatedAbstract.h"
 
-@interface PMODrawFactory : PMOCalendarOperatedAbstract
+@interface PMODrawModelControllerFactory : PMOCalendarOperatedAbstract
 
-- (PMODraw *)createDraw:(NSDate *)drawDate;
+- (PMODrawModelController *)createDrawModellController:(NSDate *)drawDate;
 
 @end

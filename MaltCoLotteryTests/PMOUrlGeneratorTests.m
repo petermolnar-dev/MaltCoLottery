@@ -26,5 +26,21 @@
     [super tearDown];
 }
 
+- (void)testURLGeneration {
+    
+    NSDate *testDate = [self.generator createDateFromComponentsWithYear:2004 withMonth:1 withDay:7];
+    
+    NSString *referenceURLAsString =@"http://www.maltco.com/super/results_draws_jan.php?year=2004&month=1&day=7";
+    
+    NSURL *resultURL = [self.generator generateDrawURLFromDate:testDate];
+    
+    NSString *resultURLAsString = [resultURL absoluteString];
+    
+    BOOL isEqual = [resultURLAsString isEqualToString:referenceURLAsString];
+    
+    XCTAssertTrue(isEqual);
+    
+}
+
 
 @end

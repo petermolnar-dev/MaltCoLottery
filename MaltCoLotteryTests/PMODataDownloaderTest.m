@@ -17,7 +17,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.downloader =[[PMODataDownloader alloc] init];
+    self.downloader =[[PMODataDownloader alloc] initWithDrawID:@"07072016"];
     
 }
 

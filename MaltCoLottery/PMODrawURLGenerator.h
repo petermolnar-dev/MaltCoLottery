@@ -10,7 +10,14 @@
 #import "PMOCalendarOperatedAbstract.h"
 
 @interface PMODrawURLGenerator : PMOCalendarOperatedAbstract
+/*! Generates a MaltCo Lottery Draw URL form the date
+ 
+ The following methodes are declared:
+ 
+ @p- (NSURL *)generateDrawURLFromDate:(NSDate *)drawDate;
 
+ @return the draw URL based on the date
+*/
 - (NSURL *)generateDrawURLFromDate:(NSDate *)drawDate;
 
 @end

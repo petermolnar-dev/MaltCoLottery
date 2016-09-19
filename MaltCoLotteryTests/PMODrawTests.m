@@ -29,13 +29,13 @@
     [super tearDown];
 }
 
-- (void)testDrawMinNumber {
-    XCTAssertTrue([[self.draw minNumber] intValue]==3);
-}
-
-- (void)testDrawMaxNumber {
-    XCTAssertTrue([[self.draw maxNumber] intValue]==46);
-}
+//- (void)testDrawMinNumber {
+//    XCTAssertTrue([[self.draw minNumber] intValue]==3);
+//}
+//
+//- (void)testDrawMaxNumber {
+//    XCTAssertTrue([[self.draw maxNumber] intValue]==46);
+//}
 
 - (void)testNumbersNotEmpty {
     XCTAssertNotNil(self.draw.drawID);

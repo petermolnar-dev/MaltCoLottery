@@ -10,10 +10,34 @@
 
 @interface PMODataDownloader()
 - (NSDictionary *)userInforForErrorNotification:(NSError *)error;
+@property (copy, nonatomic) NSString *drawID;
 @end
 
 @implementation PMODataDownloader
 
+#pragma mark - Init
+- (instancetype)initWithDrawID:(NSString *)drawID {
+    
+    self = [super init];
+    
+    if (self && drawID ) {
+        self.drawID = drawID;
+        
+    }
+    
+    return self;
+}
+
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
+- (instancetype)init
+{
+    @throw [NSException exceptionWithName:@"Not designated initializer"
+                                   reason:@"Use [[PMODataDownloader. alloc] initWithDrawID:]"
+                                 userInfo:nil];
+    return nil;
+}
 
 
 #pragma mark - Main function
@@ -52,7 +76,8 @@
 
 #pragma mark - Notifications
 - (void)notifyObserverWithProcessedData:(NSData *)data {
-    NSDictionary *userInfo = @{@"data" : data };
+    NSDictionary *userInfo = @{@"data" : data,
+                               @"drawID" : self.drawID};
     [[NSNotificationCenter defaultCenter] postNotificationName:PMODataDownloaderDidDownloadEnded
                                                         object:self
                                                       userInfo:userInfo];

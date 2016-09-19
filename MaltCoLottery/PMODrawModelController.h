@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PMODraw.h"
 
 @interface PMODrawModelController : NSObject
 
+- (instancetype)initWithDrawID:(NSString *)drawID fromURL:(NSURL *)drawURL NS_DESIGNATED_INITIALIZER;
+
+- (NSString *)drawID;
+- (NSDate *)drawDate;
+- (NSInteger)drawYear;
+- (NSArray *)numbers;
+
+- (NSInteger)minNumber;
+- (NSInteger)maxNumber;
 @end

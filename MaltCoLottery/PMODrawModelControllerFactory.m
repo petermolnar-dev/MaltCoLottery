@@ -6,24 +6,23 @@
 //  Copyright © 2016 Peter Molnar. All rights reserved.
 //
 
-#import "PMODrawFactory.h"
+#import "PMODrawModelControllerFactory.h"
 #import "PMODrawURLGenerator.h"
-#import "PMOHTMLParser.h"
-#import "PMODataDownloader.h"
 
-@interface PMODrawFactory()
+@implementation PMODrawModelControllerFactory
 
-@property (strong, nonatomic) PMODraw *draw;
-
-@end
-
-
-@implementation PMODrawFactory
-
-- (PMODraw *)createDraw:(NSDate *)drawDate {
-    return nil;
+#pragma mark - Factory method
+- (PMODrawModelController *)createDrawModellController:(NSDate *)drawDate {
+    NSString *drawID = [self generateDrawIDFromDate:drawDate];
+    PMODrawURLGenerator *urlGenerator = [[PMODrawURLGenerator alloc] init];
+    NSURL *drawURL = [urlGenerator generateDrawURLFromDate:drawDate];
+    
+    PMODrawModelController *modelController = [[PMODrawModelController alloc] initWithDrawID:drawID fromURL:drawURL];
+    
+    return modelController;
 }
 
+#pragma mark - helpers
 - (NSString *)generateDrawIDFromDate:(NSDate *)drawDate {
     NSDateComponents *monthAndDay = [self.calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:drawDate];
     return [NSString stringWithFormat:@"%@%@%@",[self adjustNumberFor2Spaces:[monthAndDay year]],[self adjustNumberFor2Spaces:[monthAndDay month]],[self adjustNumberFor2Spaces:[monthAndDay day]]];

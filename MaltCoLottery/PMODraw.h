@@ -12,6 +12,4 @@
 @property (strong, nonatomic) NSString *drawID;
 @property (strong, nonatomic) NSArray<NSNumber*> *numbers;
 
-- (NSNumber *)minNumber;
-- (NSNumber *)maxNumber;
 @end

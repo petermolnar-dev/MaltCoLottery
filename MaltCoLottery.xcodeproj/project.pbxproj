@@ -23,7 +23,7 @@
 		C77922831D61132F0075319F /* PMOCalendarOperatedAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = C77922821D61132F0075319F /* PMOCalendarOperatedAbstract.m */; };
 		C7A15E1A1D5DA03B0067C239 /* PMONumberStats.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A15E191D5DA03B0067C239 /* PMONumberStats.m */; };
 		C7A838E51D5856050095B261 /* PMODrawModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A838E41D5856050095B261 /* PMODrawModelController.m */; };
-		C7A838EC1D58570E0095B261 /* PMODrawFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A838EB1D58570E0095B261 /* PMODrawFactory.m */; };
+		C7A838EC1D58570E0095B261 /* PMODrawModelControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A838EB1D58570E0095B261 /* PMODrawModelControllerFactory.m */; };
 		C7A838EF1D58595F0095B261 /* PMOHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A838EE1D58595F0095B261 /* PMOHTMLParser.m */; };
 		C7AAF7F01D52457200D98AD3 /* PMODrawURLGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7EF1D52457200D98AD3 /* PMODrawURLGenerator.m */; };
 		C7AAF7F51D54683D00D98AD3 /* PMODataDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7F41D54683D00D98AD3 /* PMODataDownloader.m */; };
@@ -31,7 +31,9 @@
 		C7AAF7FF1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7FE1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m */; };
 		C7D12FC61D59AA3400D47DF5 /* PMODateGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */; };
 		C7D12FC91D59ABF100D47DF5 /* PMODrawStorageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */; };
+		C7F2AC141D80388000308412 /* PMODrawModelControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2AC131D80388000308412 /* PMODrawModelControllerTests.m */; };
 		C7F59BC91D5E67A8008582C2 /* PMODrawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */; };
+		C7F6B9661D8FB80700645628 /* PMODrawMOdelControllerFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F6B9651D8FB80700645628 /* PMODrawMOdelControllerFactoryTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +85,8 @@
 		C7A15E191D5DA03B0067C239 /* PMONumberStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMONumberStats.m; sourceTree = "<group>"; };
 		C7A838E31D5856050095B261 /* PMODrawModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawModelController.h; sourceTree = "<group>"; };
 		C7A838E41D5856050095B261 /* PMODrawModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawModelController.m; sourceTree = "<group>"; };
-		C7A838EA1D58570E0095B261 /* PMODrawFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawFactory.h; sourceTree = "<group>"; };
-		C7A838EB1D58570E0095B261 /* PMODrawFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawFactory.m; sourceTree = "<group>"; };
+		C7A838EA1D58570E0095B261 /* PMODrawModelControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawModelControllerFactory.h; sourceTree = "<group>"; };
+		C7A838EB1D58570E0095B261 /* PMODrawModelControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawModelControllerFactory.m; sourceTree = "<group>"; };
 		C7A838ED1D58595F0095B261 /* PMOHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOHTMLParser.h; sourceTree = "<group>"; };
 		C7A838EE1D58595F0095B261 /* PMOHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOHTMLParser.m; sourceTree = "<group>"; };
 		C7AAF7EE1D52457200D98AD3 /* PMODrawURLGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawURLGenerator.h; sourceTree = "<group>"; };
@@ -99,7 +101,9 @@
 		C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODateGeneratorTests.m; sourceTree = "<group>"; };
 		C7D12FC71D59ABF100D47DF5 /* PMODrawStorageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawStorageFactory.h; sourceTree = "<group>"; };
 		C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawStorageFactory.m; sourceTree = "<group>"; };
+		C7F2AC131D80388000308412 /* PMODrawModelControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawModelControllerTests.m; sourceTree = "<group>"; };
 		C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawTests.m; sourceTree = "<group>"; };
+		C7F6B9651D8FB80700645628 /* PMODrawMOdelControllerFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawMOdelControllerFactoryTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,8 @@
 		C71DC5931CEF99F900EACB3D /* MaltCoLotteryTests */ = {
 			isa = PBXGroup;
 			children = (
+				C7F6B9651D8FB80700645628 /* PMODrawMOdelControllerFactoryTests.m */,
+				C7F2AC131D80388000308412 /* PMODrawModelControllerTests.m */,
 				C779227C1D5FB36F0075319F /* PMODataDownloaderTest.m */,
 				C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */,
 				C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */,
@@ -224,8 +230,8 @@
 			children = (
 				C7D12FC71D59ABF100D47DF5 /* PMODrawStorageFactory.h */,
 				C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */,
-				C7A838EA1D58570E0095B261 /* PMODrawFactory.h */,
-				C7A838EB1D58570E0095B261 /* PMODrawFactory.m */,
+				C7A838EA1D58570E0095B261 /* PMODrawModelControllerFactory.h */,
+				C7A838EB1D58570E0095B261 /* PMODrawModelControllerFactory.m */,
 			);
 			name = Factories;
 			sourceTree = "<group>";
@@ -347,7 +353,7 @@
 		C71DC56F1CEF99F900EACB3D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Peter Molnar";
 				TargetAttributes = {
 					C71DC5761CEF99F900EACB3D = {
@@ -416,7 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7A838E51D5856050095B261 /* PMODrawModelController.m in Sources */,
-				C7A838EC1D58570E0095B261 /* PMODrawFactory.m in Sources */,
+				C7A838EC1D58570E0095B261 /* PMODrawModelControllerFactory.m in Sources */,
 				C7A838EF1D58595F0095B261 /* PMOHTMLParser.m in Sources */,
 				C75CF0F41CEFA5E000FF9424 /* TFHppleElement.m in Sources */,
 				C75CF0F51CEFA5E000FF9424 /* XPathQuery.m in Sources */,
@@ -440,7 +446,9 @@
 			files = (
 				C7AAF7FF1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m in Sources */,
 				C7F59BC91D5E67A8008582C2 /* PMODrawTests.m in Sources */,
+				C7F2AC141D80388000308412 /* PMODrawModelControllerTests.m in Sources */,
 				C7D12FC61D59AA3400D47DF5 /* PMODateGeneratorTests.m in Sources */,
+				C7F6B9661D8FB80700645628 /* PMODrawMOdelControllerFactoryTests.m in Sources */,
 				C779227F1D6106600075319F /* PMOHTMLParserTests.m in Sources */,
 				C779227D1D5FB36F0075319F /* PMODataDownloaderTest.m in Sources */,
 			);
@@ -503,8 +511,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -529,6 +539,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -548,8 +559,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -567,6 +580,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

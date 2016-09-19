@@ -25,12 +25,12 @@
     PMODrawURLGenerator *generator = [[PMODrawURLGenerator alloc] init];
     NSMutableArray *drawList = [[NSMutableArray alloc] init];
     
-    self.downloader = [[PMODataDownloader alloc] init];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(dataDownloaded:)
-                                                 name:PMODataDownloaderDidDownloadEnded
-                                               object:self.downloader];
+//    self.downloader = [[PMODataDownloader alloc] init];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(dataDownloaded:)
+//                                                 name:PMODataDownloaderDidDownloadEnded
+//                                               object:self.downloader];
     // Testcode
 //    NSDictionary *drawURLList = [generator drawURLs];
 //    
