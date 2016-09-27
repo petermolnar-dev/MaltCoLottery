@@ -18,6 +18,6 @@
 
  @return the draw URL based on the date
 */
-- (NSURL *)generateDrawURLFromDate:(NSDate *)drawDate;
+- (nonnull NSURL *)generateDrawURLFromDate:(nonnull NSDate *)drawDate;
 
 @end

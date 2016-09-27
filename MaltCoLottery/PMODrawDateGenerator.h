@@ -24,7 +24,7 @@ The following methodes are declared:
  
  @return Array of NSDates
  */
-- (NSArray *)drawDaysUntilToday;
+- (nullable NSArray *)drawDaysUntilToday;
 
 /*!
  @brief Generate draw days between two dates
@@ -34,6 +34,6 @@ The following methodes are declared:
 
  @return Array of NSDates
  */
-- (NSArray *)drawDaysFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
+- (nullable NSArray *)drawDaysFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate;
 
 @end

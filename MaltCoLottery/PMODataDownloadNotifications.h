@@ -13,9 +13,7 @@
 static NSString *const PMODataDownloaderDidDownloadEnded = @"PMODataDownloaderDidDownloadEnded";
 static NSString *const PMODataDownloaderError= @"PMODataDownloaderError";
 
-// Integer constants for the timeout values
-static NSUInteger PMODownloaderResourceTimeout = 60;
-static NSUInteger PMODownloaderRequestTimeout = 60;
+
 
 
 #endif /* PMODataDownloadNotifications_h */

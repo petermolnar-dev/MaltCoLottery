@@ -11,7 +11,7 @@
 #import "PMOExecutionNotifier.h"
 #import "PMODataDownloadNotifications.h"
 
-@interface PMODataDownloader : NSObject <PMOExecutionNotifier>
+@interface PMODataDownloaderWithNotifications : NSObject <PMOExecutionNotifier>
 
 @property (strong, nonatomic) NSURLSession *session;
 - (instancetype)initWithDrawID:(NSString *)drawID NS_DESIGNATED_INITIALIZER;

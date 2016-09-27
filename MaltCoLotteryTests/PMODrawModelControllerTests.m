@@ -50,7 +50,7 @@
 - (void)testNumbers {
     NSArray *referenceNumbers =@[ @7, @11, @12,@40,@43];
     __weak __typeof__(self) weakSelf = self;
-    XCTestExpectation *expectation = [[XCTestExpectation alloc] init];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading and parsing out Numbers"];
     expectation = [self keyValueObservingExpectationForObject:self.modelController
                                                                          keyPath:@"numbers"
                                                                          handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
@@ -112,7 +112,10 @@
     [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
-
+- (void)testNull {
+    PMODrawModelController *controller = [[PMODrawModelController alloc] initWithDrawID:nil fromURL:nil];
+     XCTAssertTrue(![controller drawID]);
+}
 
 
 @end

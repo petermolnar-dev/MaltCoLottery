@@ -11,11 +11,11 @@
 // Abstract class, do not instantiate 
 @interface PMOCalendarOperatedAbstract : NSObject
 
-@property (nonatomic, strong) NSDate *firstDrawDate;
-@property (strong, nonatomic) NSCalendar *calendar;
+@property (nonatomic, strong, nonnull) NSDate *firstDrawDate;
+@property (strong, nonatomic, nonnull) NSCalendar *calendar;
 
-- (NSString *)adjustNumberFor2Spaces:(NSUInteger)number;
-- (NSDate *)createDateFromComponentsWithYear:(NSInteger)year withMonth:(NSInteger)month withDay:(NSInteger)day;
-- (BOOL)isDateHoliday:(NSDate *)date;
+- (nonnull NSString *)adjustNumberFor2Spaces:(NSUInteger)number;
+- (nonnull NSDate *)createDateFromComponentsWithYear:(NSInteger)year withMonth:(NSInteger)month withDay:(NSInteger)day;
+- (BOOL)isDateHoliday:(nonnull NSDate *)date;
 
 @end

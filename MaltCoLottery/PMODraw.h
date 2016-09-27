@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PMODraw : NSObject
-@property (strong, nonatomic) NSString *drawID;
-@property (strong, nonatomic) NSArray<NSNumber*> *numbers;
+@property (strong, nonatomic, nonnull) NSString *drawID;
+@property (strong, nonatomic, nullable) NSArray<NSNumber*> *numbers;
 
 @end

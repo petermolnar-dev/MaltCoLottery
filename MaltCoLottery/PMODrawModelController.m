@@ -7,7 +7,7 @@
 //
 
 #import "PMODrawModelController.h"
-#import "PMODataDownloader.h"
+#import "PMOURLDataDownloaderWithBlock.h"
 #import "PMOHTMLParser.h"
 
 @interface PMODrawModelController()
@@ -97,35 +97,18 @@
 }
 
 - (void)startPopulateDrawFromURL:(NSURL *)drawURL {
-    PMODataDownloader *downloader = [[PMODataDownloader alloc] initWithDrawID:self.drawID];
+    PMOURLDataDownloaderWithBlock *downloader = [[PMOURLDataDownloaderWithBlock alloc] initWithSession:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didReceiveDownloadNotification:)
-                                                 name:PMODataDownloaderDidDownloadEnded
-                                               object:nil];
-    
-    [downloader downloadDataFromURL:drawURL];
+    void (^parseDownloadedData)(BOOL, NSData *) = ^(BOOL wasSuccessfull, NSData *downloadedData) {
+        if (wasSuccessfull) {
+            NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:downloadedData];
+            [self willChangeValueForKey:@"numbers"];
+            self.draw.numbers = numbers;
+            [self didChangeValueForKey:@"numbers"];
+        }
+    };
+    [downloader downloadDataFromURL:drawURL completion:parseDownloadedData];
 }
 
-- (void)didReceiveDownloadNotification:(NSNotification *)notification {
-    if ([[notification.userInfo objectForKey:@"drawID"] isEqualToString:self.drawID]) {
-        [self removeObservers];
-        NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:[notification.userInfo objectForKey:@"data"]];
-        [self willChangeValueForKey:@"numbers"];
-        self.draw.numbers = numbers;
-        [self didChangeValueForKey:@"numbers"];
-        
-    }
-}
-
-- (void)removeObservers {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-}
-
-#pragma mark - dealloc
-- (void)dealloc {
-    [self removeObservers];
-}
 
 @end

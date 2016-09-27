@@ -7,17 +7,17 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "PMODataDownloader.h"
+#import "PMOURLDataDownloaderWithBlock.h"
 
 @interface PMODataDownloaderTest : XCTestCase
-@property (strong, nonatomic) PMODataDownloader *downloader;
+@property (strong, nonatomic) PMOURLDataDownloaderWithBlock *downloader;
 @end
 
 @implementation PMODataDownloaderTest
 
 - (void)setUp {
     [super setUp];
-    self.downloader =[[PMODataDownloader alloc] initWithDrawID:@"07072016"];
+    self.downloader =[[PMOURLDataDownloaderWithBlock alloc] initWithSession:nil];
     
 }
 
@@ -29,40 +29,45 @@
 
 #pragma mark - Tests
 - (void)testDownloadCompleted {
-    [self.downloader downloadDataFromURL:[NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png"]];
-    XCTestExpectation *expectation = [self expectationForNotification:PMODataDownloaderDidDownloadEnded
-                                                               object:self.downloader
-                                                              handler:^BOOL(NSNotification * _Nonnull notification) {
-                                                                  UIImage *testImage = [UIImage imageWithData:[notification.userInfo objectForKey:@"data"]];
-                                                                  if (testImage && testImage.size.height ==1 && testImage.size.width == 1) {
-                                                                      [expectation fulfill];
-                                                                      return true;
-                                                                      
-                                                                  } else {
-                                                                      return false;
-                                                                  }
-                                                              }];
-
-    [self waitForExpectationsWithTimeout:5 handler:nil];
-}
-
-- (void)testDownloadFailure {
-    [self.downloader downloadDataFromURL:[NSURL URLWithString:@"http://fdafdsafdsa.ji/web/wwdc/items.json"]];
-    XCTestExpectation *expectation = [self expectationForNotification:PMODataDownloaderError
-                                                               object:self.downloader
-                                                              handler:^BOOL(NSNotification * _Nonnull notification) {
-                                                                  NSError *error = [notification.userInfo objectForKey:@"error"];
-                                                                  if (error && [error localizedDescription]) {
-                                                                      [expectation fulfill];
-                                                                      return true;
-                                                                      
-                                                                  } else {
-                                                                      return false;
-                                                                  }
-                                                              }];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    
+    NSURL *testDownloadURL = [NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png"];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Download Successfull"];
+    
+
+    
+    void (^callbackTest)(BOOL,NSData *) = ^(BOOL wasDownloadSuccessFull, NSData *data) {
+        if (wasDownloadSuccessFull) {
+            XCTAssert([data length] > 0);
+            [expectation fulfill];
+        }
+        };
+
+    [self.downloader downloadDataFromURL:testDownloadURL completion:callbackTest];
+    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@", error);
+        }
+    }];
 }
+
+//- (void)testDownloadFailure {
+//    [self.downloader downloadDataFromURL:[NSURL URLWithString:@"http://fdafdsafdsa.ji/web/wwdc/items.json"]];
+//    XCTestExpectation *expectation = [self expectationForNotification:PMODataDownloaderError
+//                                                               object:self.downloader
+//                                                              handler:^BOOL(NSNotification * _Nonnull notification) {
+//                                                                  NSError *error = [notification.userInfo objectForKey:@"error"];
+//                                                                  if (error && [error localizedDescription]) {
+//                                                                      [expectation fulfill];
+//                                                                      return true;
+//                                                                      
+//                                                                  } else {
+//                                                                      return false;
+//                                                                  }
+//                                                              }];
+//    
+//    [self waitForExpectationsWithTimeout:5 handler:nil];
+//}
 
 
 @end

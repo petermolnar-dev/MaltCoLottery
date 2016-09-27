@@ -8,13 +8,13 @@
 
 #import "PMODrawStorageFactory.h"
 #import "PMODrawURLGenerator.h"
-#import "PMODataDownloader.h"
+#import "PMOURLDataDownloaderWithBlock.h"
 #import "PMOHTMLParser.h"
 #import "PMODraw.h"
 
 @interface PMODrawStorageFactory()
 
-@property (strong, nonatomic) PMODataDownloader *downloader;
+@property (strong, nonatomic) PMOURLDataDownloaderWithBlock *downloader;
 
 @end
 

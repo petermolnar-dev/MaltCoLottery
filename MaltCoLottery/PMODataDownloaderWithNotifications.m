@@ -6,14 +6,15 @@
 //  Copyright © 2016 Peter Molnar. All rights reserved.
 //
 
-#import "PMODataDownloader.h"
+#import "PMODataDownloaderWithNotifications.h"
+#import "PMOURLSessionDefaults.h"
 
-@interface PMODataDownloader()
+@interface PMODataDownloaderWithNotifications()
 - (NSDictionary *)userInforForErrorNotification:(NSError *)error;
 @property (copy, nonatomic) NSString *drawID;
 @end
 
-@implementation PMODataDownloader
+@implementation PMODataDownloaderWithNotifications
 
 #pragma mark - Init
 - (instancetype)initWithDrawID:(NSString *)drawID {
