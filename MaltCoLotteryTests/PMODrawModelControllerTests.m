@@ -49,73 +49,78 @@
 
 - (void)testNumbers {
     NSArray *referenceNumbers =@[ @7, @11, @12,@40,@43];
-    __weak __typeof__(self) weakSelf = self;
+
     XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading and parsing out Numbers"];
-    expectation = [self keyValueObservingExpectationForObject:self.modelController
-                                                                         keyPath:@"numbers"
-                                                                         handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
-                                                                             __typeof__(self) strongSelf = weakSelf;
-                                                                             NSArray *calculatedArray = strongSelf.modelController.numbers;
-                                                                             if (
-                                                                                 [calculatedArray isEqualToArray:referenceNumbers]) {
-                                                                                  [expectation fulfill];
-                                                                                 return true;
-                                                                                
-                                                                             } else {
-                                                                                 return false;
-                                                                             }
-                                                                         }];
+   
+    [self keyValueObservingExpectationForObject:self.modelController
+                                        keyPath:@"numbers"
+                                        handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
+                                            XCTAssert([self.modelController.numbers isEqualToArray:referenceNumbers]);
+                                            [expectation fulfill];
+                                            return true;
+                                        }];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self.modelController startPopulateDrawNumbers];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@ with expectation: %@", error, expectation.description);
+        }
+    }];
 }
 
 
 - (void)testMinNumber {
-    __weak __typeof__(self) weakSelf = self;
-    XCTestExpectation *expectation = [self keyValueObservingExpectationForObject:self.modelController
-                                                                         keyPath:@"numbers"
-                                                                         handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
-                                                                             __typeof__(self) strongSelf = weakSelf;
-                                                                             
-                                                                             if ( [strongSelf.modelController minNumber] == 7
-                                                                                 ) {
-                                                                                  [expectation fulfill];
-                                                                                 return true;
-                                                                                
-                                                                             } else {
-                                                                                 return false;
-                                                                             }
-                                                                         }];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading testing minimum number"];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self keyValueObservingExpectationForObject:self.modelController
+                                        keyPath:@"numbers"
+                                        handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
+                                            XCTAssert([self.modelController minNumber]==7);
+                                            [expectation fulfill];
+                                            return true;
+                                        }];
     
+    [self.modelController startPopulateDrawNumbers];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@ with expectation: %@", error, expectation.description);
+        }
+    }];
 }
 
 
 - (void)testMaxNumber {
-    __weak __typeof__(self) weakSelf = self;
-    XCTestExpectation *expectation = [self keyValueObservingExpectationForObject:self.modelController
-                                                                         keyPath:@"numbers"
-                                                                         handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
-                                                                             __typeof__(self) strongSelf = weakSelf;
-                                                                             
-                                                                             if ( [strongSelf.modelController maxNumber] == 43
-                                                                                 ) {
-                                                                                 [expectation fulfill];
-                                                                                 return true;
-                                                                                 
-                                                                             } else {
-                                                                                 return false;
-                                                                             }
-                                                                         }];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading testing maximum number"];
     
-    [self waitForExpectationsWithTimeout:5 handler:nil];
+    [self keyValueObservingExpectationForObject:self.modelController
+                                        keyPath:@"numbers"
+                                        handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
+                                            XCTAssert([self.modelController maxNumber]==43);
+                                            [expectation fulfill];
+                                            return true;
+                                        }];
+    
+    [self.modelController startPopulateDrawNumbers];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@ with expectation: %@", error, expectation.description);
+        }
+    }];
+
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
+/**
+ Clang nonnull warning disabled. The test target is to test if the initializer crashes with nonnullable parameter set with nil.
+ */
 - (void)testNull {
     PMODrawModelController *controller = [[PMODrawModelController alloc] initWithDrawID:nil fromURL:nil];
-     XCTAssertTrue(![controller drawID]);
+    XCTAssertTrue(![controller drawID]);
 }
-
+#pragma clang diagnostic pop
 
 @end

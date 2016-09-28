@@ -12,7 +12,8 @@
 
 @interface PMODrawModelController()
 
-@property (strong, nonatomic) PMODraw *draw;
+@property (strong, nonatomic, nonnull) PMODraw *draw;
+@property (strong, nonatomic, nonnull) NSURL *drawURL;
 
 @end
 
@@ -23,8 +24,7 @@
     
     if (self && drawID && drawURL) {
         self.draw.drawID = drawID;
-        
-        [self startPopulateDrawFromURL:drawURL];
+        _drawURL = drawURL;
     }
     
     return self;
@@ -73,6 +73,22 @@
 }
 
 #pragma mark - Public API
+- (void)startPopulateDrawNumbers {
+    PMOURLDataDownloaderWithBlock *downloader = [[PMOURLDataDownloaderWithBlock alloc] initWithSession:nil];
+    
+    void (^parseDownloadedData)(BOOL, NSData *) = ^(BOOL wasSuccessfull, NSData *downloadedData) {
+        if (wasSuccessfull) {
+            NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:downloadedData];
+            [self willChangeValueForKey:@"numbers"];
+            self.draw.numbers = numbers;
+            NSLog(@"Numbers Arrived: %@", self.numbers);
+            [self didChangeValueForKey:@"numbers"];
+        }
+    };
+    [downloader downloadDataFromURL:self.drawURL completion:parseDownloadedData];
+}
+
+
 - (NSInteger)minNumber {
     return [[[self sortedNumbers] firstObject] integerValue];
 }
@@ -96,19 +112,6 @@
     return sortedNumbers;
 }
 
-- (void)startPopulateDrawFromURL:(NSURL *)drawURL {
-    PMOURLDataDownloaderWithBlock *downloader = [[PMOURLDataDownloaderWithBlock alloc] initWithSession:nil];
-    
-    void (^parseDownloadedData)(BOOL, NSData *) = ^(BOOL wasSuccessfull, NSData *downloadedData) {
-        if (wasSuccessfull) {
-            NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:downloadedData];
-            [self willChangeValueForKey:@"numbers"];
-            self.draw.numbers = numbers;
-            [self didChangeValueForKey:@"numbers"];
-        }
-    };
-    [downloader downloadDataFromURL:drawURL completion:parseDownloadedData];
-}
 
 
 @end

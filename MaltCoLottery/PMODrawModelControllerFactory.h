@@ -12,6 +12,13 @@
 
 @interface PMODrawModelControllerFactory : PMOCalendarOperatedAbstract
 
-- (PMODrawModelController *)createDrawModellController:(NSDate *)drawDate;
+/**
+ Factory method to create a new modelcontroller.
+
+ @param drawDate The required drawDate. The Factory will genereate the corresponding url for the drawing.
+
+ @return A newly created modelcontroller for the given drawDate
+ */
+- (nonnull PMODrawModelController *)createDrawModellController:(nonnull NSDate *)drawDate;
 
 @end

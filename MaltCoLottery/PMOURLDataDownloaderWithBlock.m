@@ -25,12 +25,7 @@
         if (session) {
             _session = session;
         } else {
-            NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-            [sessionConfiguration setTimeoutIntervalForRequest:PMODownloaderRequestTimeout];
-            [sessionConfiguration setTimeoutIntervalForResource:PMODownloaderResourceTimeout];
-            _session = [NSURLSession sessionWithConfiguration:sessionConfiguration
-                                                     delegate:nil
-                                                delegateQueue:nil];
+            _session = [self createDefaultSession];
         }
     }
     
@@ -44,7 +39,7 @@
 
 #pragma mark - Main method
 - (void)downloadDataFromURL:(NSURL *)sourceURL completion:(void (^)(BOOL wasSuccessfull, NSData  *downloadedData))callback {
-
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:sourceURL];
     
     NSURLSessionDataTask *downloadTask = [self.session dataTaskWithRequest:request completionHandler:
@@ -58,5 +53,17 @@
     [downloadTask resume];
 }
 
+#pragma mark - Helpers
+
+- (nonnull NSURLSession *)createDefaultSession {
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    [sessionConfiguration setTimeoutIntervalForRequest:PMODownloaderRequestTimeout];
+    [sessionConfiguration setTimeoutIntervalForResource:PMODownloaderResourceTimeout];
+    
+    return [NSURLSession sessionWithConfiguration:sessionConfiguration
+                                         delegate:nil
+                                    delegateQueue:nil];
+    
+}
 
 @end
