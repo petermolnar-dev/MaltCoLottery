@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface PMONumberStats : NSObject
-@property (strong, nonatomic) NSNumber *number;
-@property (strong, nonatomic) NSArray *drawDates;
-@property (strong, nonatomic) NSDate *lastDrawDay;
+@property (strong, nonatomic, nonnull) NSNumber *number;
+@property (strong, nonatomic, nullable) NSArray<NSDate *> *drawDates;
+@property (strong, nonatomic, nullable) NSDate *lastDrawDay;
 
-- (NSNumber *)drawCount;
-- (NSNumber *)drawCountInYear:(NSNumber *)year;
+- (nullable NSNumber *)drawCount;
+- (nullable NSNumber *)drawCountInYear:(nonnull NSNumber *)year;
 
 @end

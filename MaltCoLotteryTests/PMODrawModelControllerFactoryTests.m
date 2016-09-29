@@ -9,11 +9,11 @@
 #import <XCTest/XCTest.h>
 #import "PMODrawModelControllerFactory.h"
 
-@interface PMODrawMOdelControllerFactoryTests : XCTestCase
+@interface PMODrawModelControllerFactoryTests : XCTestCase
 @property (strong, nonatomic) PMODrawModelControllerFactory *factory;
 @end
 
-@implementation PMODrawMOdelControllerFactoryTests
+@implementation PMODrawModelControllerFactoryTests
 
 - (void)setUp {
     [super setUp];
