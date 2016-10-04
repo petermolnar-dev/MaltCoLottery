@@ -7,51 +7,55 @@
 //
 
 #import "PMODrawStorageFactory.h"
-#import "PMODrawURLGenerator.h"
-#import "PMOURLDataDownloaderWithBlock.h"
-#import "PMOHTMLParser.h"
-#import "PMODraw.h"
+#import "PMODrawDateGenerator.h"
+#import "PMODrawModelControllerFactory.h"
 
 @interface PMODrawStorageFactory()
 
-@property (strong, nonatomic) PMOURLDataDownloaderWithBlock *downloader;
+@property (strong, nonatomic) PMODrawDateGenerator *dateGenerator;
 
 @end
 
 @implementation PMODrawStorageFactory
 
-- (NSArray *)buildStorage {
 
-    PMODrawURLGenerator *generator = [[PMODrawURLGenerator alloc] init];
-    NSMutableArray *drawList = [[NSMutableArray alloc] init];
-    
-//    self.downloader = [[PMODataDownloader alloc] init];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(dataDownloaded:)
-//                                                 name:PMODataDownloaderDidDownloadEnded
-//                                               object:self.downloader];
-    // Testcode
-//    NSDictionary *drawURLList = [generator drawURLs];
-//    
-//    for (NSString *drawID in [drawURLList allKeys]) {
-//        NSData *drawHtmlData = [NSData dataWithContentsOfURL:[drawURLList objectForKey:drawID]];
-//        NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:drawHtmlData ];
-//        PMODraw *newDraw = [[PMODraw alloc] init];
-//        
-//        if (newDraw && [numbers count]>0) {
-//            newDraw.drawID = drawID;
-//            newDraw.numbers = numbers;
-//            [drawList addObject:newDraw];
-//        }
-//        
-//    }
-    NSLog(@"Drawlist: %@", drawList);
-    return drawList;
+#pragma mark - Accessor
+- (PMODrawDateGenerator *)dateGenerator {
+    if (!_dateGenerator) {
+        PMODrawDateGenerator *dateGenerator = [[PMODrawDateGenerator alloc] init];
+        _dateGenerator = dateGenerator;
+    }
+    return _dateGenerator;
 }
 
-- (void)dataDownloaded:(NSData *)data {
+
+#pragma mark - Public API
+
+- (nonnull PMODrawStorageController *)buildStorageFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate {
+    PMODrawModelControllerFactory *modelFactory = [[PMODrawModelControllerFactory alloc] init];
+    NSMutableArray <PMODrawModelController *>*modelControllers = [[NSMutableArray alloc] init];
     
+    NSArray <NSDate *>*drawDates = [self.dateGenerator drawDaysFromDate:fromDate toDate:toDate];
+    
+    for (NSDate *currentDate in drawDates) {
+        PMODrawModelController *currentModelController = [modelFactory buildDrawModellControllerFromDrawDate:currentDate];
+        if (currentModelController) {
+            [modelControllers addObject:currentModelController];
+        }
+    }
+    
+    PMODrawStorageController *storageController = [[PMODrawStorageController alloc] initWithModelControllers:modelControllers];
+    
+    return storageController;
+    
+}
+
+- (PMODrawStorageController *)buildStorage {
+    // The first draw date was in 2004 January in Malta
+    NSDate *fromDate = [self.dateGenerator createDateFromComponentsWithYear:2004 withMonth:1 withDay:1];
+    NSDate *toDate = [NSDate date];
+    
+    return [self buildStorageFromDate:fromDate toDate:toDate];
 }
 
 @end

@@ -7,7 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PMODrawStorageController.h"
 
 @interface PMODrawStorageFactory : NSObject
-- (NSArray *)buildStorage;
+
+/**
+ Build storage from the draws from default first date (01/01/2004) until today
+
+ @return PMOStrorageController with all of the draws until today
+ */
+- (nonnull PMODrawStorageController *)buildStorage;
+
+/**
+ Build storage from the draws from |fromDate| until |toDate|
+
+ @param fromDate The date from the draw dates will be genreated
+ @param toDate   The date until the draw dates will be genreated
+
+ @return PMOStrorageController with all of the draws between the fromDate toDate range
+ */
+- (nonnull PMODrawStorageController *)buildStorageFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate;
+
 @end
