@@ -14,6 +14,7 @@
  */
 @interface PMODrawModelController : NSObject
 
+
 /**
  Designated initializer of the ModelController
 
@@ -22,18 +23,22 @@
 
  @return PMOModellController
  */
-- (nonnull instancetype)initWithDrawID:(nonnull NSString *)drawID fromURL:(nonnull NSURL *)drawURL NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithDrawID:(nonnull NSString *)drawID fromURL:(nonnull NSURL *)drawURL NS_DESIGNATED_INITIALIZER;
+
 
 /**
  Start fetching down the HTTP request, and parse the page in order to fill up with the numbers.
  */
 - (void)startPopulateDrawNumbers;
+
+
 /**
  The date of the draw with the following format: yyyymmdd.
  
  @return DrawID, example: 20160405
  */
 - (nonnull NSString *)drawID;
+
 
 /**
  The draw date in date format.
@@ -42,12 +47,14 @@
  */
 - (nonnull NSDate *)drawDate;
 
+
 /**
  The year or the draw.
 
  @return returns the year part of the draw date as an integer
  */
 - (NSInteger)drawYear;
+
 
 /**
  The numbers, which were drawn on that specific date. 
@@ -65,6 +72,7 @@
  @return minimum number of the draw set
  */
 - (NSInteger)minNumber;
+
 
 /**
  The maximum among the numbers.

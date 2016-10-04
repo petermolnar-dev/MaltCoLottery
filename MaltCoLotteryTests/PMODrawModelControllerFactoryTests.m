@@ -31,12 +31,22 @@
     
     NSDate *resultDate = [dateFormatter dateFromString:@"20160907"];
     
-    PMODrawModelController *controller =  [self.factory createDrawModellController:resultDate];
+    PMODrawModelController *controller =  [self.factory buildDrawModellControllerFromDrawDate:resultDate];
     
     BOOL controllerIsNotNil = controller;
     BOOL controllerIsValid = [controller.drawID isEqualToString:@"20160907"];
     
     XCTAssertTrue(controllerIsNotNil && controllerIsValid);
 }
+
+//Save the diagnostic state
+#pragma clang diagnostic push
+//Ignore -Wnonnull warnings
+#pragma clang diagnostic ignored "-Wnonnull"
+- (void)testWithNullParameter {
+    XCTAssertThrows([self.factory buildDrawModellControllerFromDrawDate:nil]);
+}
+//Restore the diagnostic state
+#pragma clang diagnostic pop
 
 @end

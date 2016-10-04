@@ -49,9 +49,9 @@
 
 - (void)testNumbers {
     NSArray *referenceNumbers =@[ @7, @11, @12,@40,@43];
-
+    
     XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading and parsing out Numbers"];
-   
+    
     [self keyValueObservingExpectationForObject:self.modelController
                                         keyPath:@"numbers"
                                         handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
@@ -109,7 +109,7 @@
             NSLog(@"Timeout Error: %@ with expectation: %@", error, expectation.description);
         }
     }];
-
+    
 }
 
 #pragma clang diagnostic push
@@ -117,8 +117,13 @@
 /**
  Clang nonnull warning disabled. The test target is to test if the initializer crashes with nonnullable parameter set with nil.
  */
-- (void)testNull {
-    PMODrawModelController *controller = [[PMODrawModelController alloc] initWithDrawID:nil fromURL:nil];
+- (void)testNullDrawID {
+    PMODrawModelController *controller = [[PMODrawModelController alloc] initWithDrawID:nil fromURL:[NSURL URLWithString:@"http://www.maltco.com/super/results_draws_sep.php?year=2016&month=9&day=7"]];
+    XCTAssertTrue(![controller drawID]);
+}
+
+- (void)testNullDrawURL {
+    PMODrawModelController *controller = [[PMODrawModelController alloc] initWithDrawID:@"20160907" fromURL:nil];
     XCTAssertTrue(![controller drawID]);
 }
 #pragma clang diagnostic pop

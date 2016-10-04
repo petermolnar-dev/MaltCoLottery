@@ -49,7 +49,7 @@
 					<key>flipped</key>
 					<true/>
 					<key>frame</key>
-					<string>{{1005, 268}, {25, 419}}</string>
+					<string>{{1096, 195}, {-66, 492}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -215,7 +215,7 @@
 					<key>fillType</key>
 					<integer>0</integer>
 					<key>frame</key>
-					<string>{{606, 636}, {207, 128}}</string>
+					<string>{{609, 286}, {207, 128}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -385,7 +385,7 @@
 					<key>fillType</key>
 					<integer>0</integer>
 					<key>frame</key>
-					<string>{{729, 448}, {207, 128}}</string>
+					<string>{{772, 448}, {207, 128}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -715,7 +715,7 @@
 					<key>fillType</key>
 					<integer>0</integer>
 					<key>frame</key>
-					<string>{{572, 190}, {207, 128}}</string>
+					<string>{{537, 103}, {207, 128}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -831,7 +831,7 @@
 					<key>flipped</key>
 					<false/>
 					<key>frame</key>
-					<string>{{824, 579}, {114, 170}}</string>
+					<string>{{876, 576}, {62, 173}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -941,7 +941,7 @@
 					<key>flipped</key>
 					<false/>
 					<key>frame</key>
-					<string>{{668, 318}, {42, 318}}</string>
+					<string>{{633, 231}, {80, 55}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -1051,7 +1051,7 @@
 					<key>flipped</key>
 					<false/>
 					<key>frame</key>
-					<string>{{483, 630}, {246, -107}}</string>
+					<string>{{483, 630}, {289, -107}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -2231,7 +2231,7 @@
 					<key>flipped</key>
 					<false/>
 					<key>frame</key>
-					<string>{{676, 318}, {-268, -64}}</string>
+					<string>{{641, 231}, {-233, 23}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -2341,7 +2341,7 @@
 					<key>flipped</key>
 					<false/>
 					<key>frame</key>
-					<string>{{676, 318}, {-538, 23}}</string>
+					<string>{{641, 231}, {-503, 110}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -3151,7 +3151,7 @@
 					<key>fillType</key>
 					<integer>0</integer>
 					<key>frame</key>
-					<string>{{901, 140}, {207, 128}}</string>
+					<string>{{992, 67}, {207, 128}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -3267,7 +3267,7 @@
 					<key>flipped</key>
 					<true/>
 					<key>frame</key>
-					<string>{{1000, 268}, {-167, 180}}</string>
+					<string>{{1091, 195}, {-215, 253}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -3285,7 +3285,7 @@
 					<key>rotationAngle</key>
 					<integer>0</integer>
 					<key>rotationHandleRadius</key>
-					<real>145</real>
+					<real>160</real>
 					<key>scaleImage</key>
 					<true/>
 					<key>stroke1Color</key>
@@ -3341,7 +3341,7 @@
 				</dict>
 				<dict>
 					<key>adjustmentRatioX</key>
-					<real>0.67959770114942586</real>
+					<real>0.30553886217948734</real>
 					<key>adjustmentRatioY</key>
 					<real>0.0</real>
 					<key>arrowTypeA</key>
@@ -3377,7 +3377,7 @@
 					<key>flipped</key>
 					<true/>
 					<key>frame</key>
-					<string>{{710, 636}, {289, -368}}</string>
+					<string>{{713, 286}, {377, -91}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -3395,7 +3395,7 @@
 					<key>rotationAngle</key>
 					<integer>0</integer>
 					<key>rotationHandleRadius</key>
-					<real>115</real>
+					<real>250</real>
 					<key>scaleImage</key>
 					<true/>
 					<key>stroke1Color</key>

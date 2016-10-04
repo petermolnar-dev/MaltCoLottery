@@ -10,7 +10,7 @@
 
 @implementation PMODrawDateGenerator
 
-- (NSArray *)drawDaysUntilToday {
+- (NSArray <NSDate *>*)drawDaysUntilToday {
     
     NSDate *now = [NSDate date];
     NSDate *currentDate = self.firstDrawDate;
@@ -19,14 +19,14 @@
     
 }
 
-- (NSArray *)drawDaysFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
+- (NSArray <NSDate *>*)drawDaysFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
     NSTimeInterval secondsPerDay = 24 * 60 * 60;
 
     NSDateComponents *weekDayComponents = [self.calendar components:NSCalendarUnitWeekday fromDate:fromDate];
     NSInteger dayOfWeek = [weekDayComponents weekday];
     
     
-    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
+    NSMutableArray <NSDate *>*resultArray = [[NSMutableArray alloc] init];
     
     while (dayOfWeek != 4) { // We are looking for the next Wednesday
         fromDate = [fromDate dateByAddingTimeInterval:secondsPerDay];

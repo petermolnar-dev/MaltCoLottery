@@ -40,6 +40,7 @@
                                  userInfo:nil];
     return nil;
 }
+#pragma clang diagnostic pop
 
 #pragma mark - Accessors
 
@@ -76,7 +77,7 @@
 - (void)startPopulateDrawNumbers {
     PMOURLDataDownloaderWithBlock *downloader = [[PMOURLDataDownloaderWithBlock alloc] initWithSession:nil];
     
-    void (^parseDownloadedData)(BOOL, NSData *) = ^(BOOL wasSuccessfull, NSData *downloadedData) {
+    void (^parseDownloadedData)(BOOL,  NSData * _Nullable ) = ^(BOOL wasSuccessfull, NSData *downloadedData) {
         if (wasSuccessfull) {
             NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:downloadedData];
             [self willChangeValueForKey:@"numbers"];

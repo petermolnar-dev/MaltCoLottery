@@ -12,14 +12,23 @@
 @implementation PMODrawModelControllerFactory
 
 #pragma mark - Factory method
-- (PMODrawModelController *)createDrawModellController:(NSDate *)drawDate {
-    NSString *drawID = [self generateDrawIDFromDate:drawDate];
-    PMODrawURLGenerator *urlGenerator = [[PMODrawURLGenerator alloc] init];
-    NSURL *drawURL = [urlGenerator generateDrawURLFromDate:drawDate];
+- (PMODrawModelController *)buildDrawModellControllerFromDrawDate:(NSDate *)drawDate {
+    if (drawDate) {
+        NSString *drawID = [self generateDrawIDFromDate:drawDate];
+        PMODrawURLGenerator *urlGenerator = [[PMODrawURLGenerator alloc] init];
+        NSURL *drawURL = [urlGenerator generateDrawURLFromDate:drawDate];
+        
+        PMODrawModelController *modelController = [[PMODrawModelController alloc] initWithDrawID:drawID fromURL:drawURL];
+        [modelController startPopulateDrawNumbers];
+        
+        return modelController;
+    } else {
+        @throw [NSException exceptionWithName:@"Can't be initialised with null parameter"
+                                       reason:@"Use buildDrawModellControllerFromDrawDate:drawDate"
+                                     userInfo:nil];
+        return nil;
+    }
     
-    PMODrawModelController *modelController = [[PMODrawModelController alloc] initWithDrawID:drawID fromURL:drawURL];
-    
-    return modelController;
 }
 
 #pragma mark - helpers

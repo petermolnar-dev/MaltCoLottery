@@ -18,6 +18,8 @@
 		C75CF0F31CEFA5E000FF9424 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = C75CF0EE1CEFA5E000FF9424 /* TFHpple.m */; };
 		C75CF0F41CEFA5E000FF9424 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C75CF0F01CEFA5E000FF9424 /* TFHppleElement.m */; };
 		C75CF0F51CEFA5E000FF9424 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C75CF0F21CEFA5E000FF9424 /* XPathQuery.m */; };
+		C771C6FE1D9D295A00C592D4 /* PMODrawStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C771C6FD1D9D295A00C592D4 /* PMODrawStorageController.m */; };
+		C771C7001D9D6D1000C592D4 /* PMODrawStorageFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C771C6FF1D9D6D1000C592D4 /* PMODrawStorageFactoryTests.m */; };
 		C779227D1D5FB36F0075319F /* PMODataDownloaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C779227C1D5FB36F0075319F /* PMODataDownloaderTest.m */; };
 		C779227F1D6106600075319F /* PMOHTMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C779227E1D6106600075319F /* PMOHTMLParserTests.m */; };
 		C77922831D61132F0075319F /* PMOCalendarOperatedAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = C77922821D61132F0075319F /* PMOCalendarOperatedAbstract.m */; };
@@ -77,6 +79,9 @@
 		C75CF0F01CEFA5E000FF9424 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		C75CF0F11CEFA5E000FF9424 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		C75CF0F21CEFA5E000FF9424 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		C771C6FC1D9D295A00C592D4 /* PMODrawStorageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawStorageController.h; sourceTree = "<group>"; };
+		C771C6FD1D9D295A00C592D4 /* PMODrawStorageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawStorageController.m; sourceTree = "<group>"; };
+		C771C6FF1D9D6D1000C592D4 /* PMODrawStorageFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawStorageFactoryTests.m; sourceTree = "<group>"; };
 		C779227C1D5FB36F0075319F /* PMODataDownloaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODataDownloaderTest.m; sourceTree = "<group>"; };
 		C779227E1D6106600075319F /* PMOHTMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOHTMLParserTests.m; sourceTree = "<group>"; };
 		C77922811D61132F0075319F /* PMOCalendarOperatedAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOCalendarOperatedAbstract.h; sourceTree = "<group>"; };
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				C7F6B9651D8FB80700645628 /* PMODrawModelControllerFactoryTests.m */,
+				C771C6FF1D9D6D1000C592D4 /* PMODrawStorageFactoryTests.m */,
 				C7F2AC131D80388000308412 /* PMODrawModelControllerTests.m */,
 				C779227C1D5FB36F0075319F /* PMODataDownloaderTest.m */,
 				C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */,
@@ -222,6 +228,8 @@
 			children = (
 				C7A838E31D5856050095B261 /* PMODrawModelController.h */,
 				C7A838E41D5856050095B261 /* PMODrawModelController.m */,
+				C771C6FC1D9D295A00C592D4 /* PMODrawStorageController.h */,
+				C771C6FD1D9D295A00C592D4 /* PMODrawStorageController.m */,
 			);
 			name = ModelControllers;
 			sourceTree = "<group>";
@@ -434,6 +442,7 @@
 				C71DC5821CEF99F900EACB3D /* ViewController.m in Sources */,
 				C7A15E1A1D5DA03B0067C239 /* PMONumberStats.m in Sources */,
 				C7AAF7F01D52457200D98AD3 /* PMODrawURLGenerator.m in Sources */,
+				C771C6FE1D9D295A00C592D4 /* PMODrawStorageController.m in Sources */,
 				C7AAF7FD1D5726B500D98AD3 /* PMODraw.m in Sources */,
 				C71DC57F1CEF99F900EACB3D /* AppDelegate.m in Sources */,
 				C71DC5AF1CEF9A1200EACB3D /* PMODrawDateGenerator.m in Sources */,
@@ -447,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7AAF7FF1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m in Sources */,
+				C771C7001D9D6D1000C592D4 /* PMODrawStorageFactoryTests.m in Sources */,
 				C7F59BC91D5E67A8008582C2 /* PMODrawTests.m in Sources */,
 				C7F2AC141D80388000308412 /* PMODrawModelControllerTests.m in Sources */,
 				C7D12FC61D59AA3400D47DF5 /* PMODateGeneratorTests.m in Sources */,

@@ -26,6 +26,6 @@
  @param sourceURL The url of the downloadable data in NSURL format
  @param callback  The callback block on the requester. ^(wasSuccessfull, downloadadData)
  */
-- (void)downloadDataFromURL:(nonnull NSURL *)sourceURL completion:(void(^_Nonnull)(BOOL wasSuccessfull, NSData * _Nonnull downloadedData))callback;
+- (void)downloadDataFromURL:(nonnull NSURL *)sourceURL completion:(void(^_Nonnull)(BOOL wasSuccessfull, NSData * _Nullable downloadedData))callback;
 
 @end
