@@ -52,15 +52,13 @@
     
     XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading and parsing out Numbers"];
     
-    [self keyValueObservingExpectationForObject:self.modelController
-                                        keyPath:@"numbers"
-                                        handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
-                                            XCTAssert([self.modelController.numbers isEqualToArray:referenceNumbers]);
-                                            [expectation fulfill];
-                                            return true;
-                                        }];
+    void (^processCallBack)(BOOL,  NSArray * _Nullable ) = ^(BOOL wasSuccessfull, NSArray *downloadedNumbers) {
+        XCTAssert([downloadedNumbers isEqualToArray:referenceNumbers]);
+        [expectation fulfill];
+
+    };
     
-    [self.modelController startPopulateDrawNumbers];
+    [self.modelController startPopulateDrawNumbersWithCompletionHandler:processCallBack];
     
     [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
         if (error) {
@@ -73,16 +71,14 @@
 - (void)testMinNumber {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading testing minimum number"];
     
-    [self keyValueObservingExpectationForObject:self.modelController
-                                        keyPath:@"numbers"
-                                        handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
-                                            XCTAssert([self.modelController minNumber]==7);
-                                            [expectation fulfill];
-                                            return true;
-                                        }];
+     void (^processCallBack)(BOOL,  NSArray * _Nullable ) = ^(BOOL wasSuccessfull, NSArray *downloadedNumbers) {
+        XCTAssert([self.modelController minNumber]==7);
+        [expectation fulfill];
+        
+    };
     
-    [self.modelController startPopulateDrawNumbers];
-    
+    [self.modelController startPopulateDrawNumbersWithCompletionHandler:processCallBack];
+   
     [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
         if (error) {
             NSLog(@"Timeout Error: %@ with expectation: %@", error, expectation.description);
@@ -94,15 +90,13 @@
 - (void)testMaxNumber {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading testing maximum number"];
     
-    [self keyValueObservingExpectationForObject:self.modelController
-                                        keyPath:@"numbers"
-                                        handler:^BOOL(id  _Nonnull observedObject, NSDictionary * _Nonnull change) {
-                                            XCTAssert([self.modelController maxNumber]==43);
-                                            [expectation fulfill];
-                                            return true;
-                                        }];
+    void (^processCallBack)(BOOL,  NSArray * _Nullable ) = ^(BOOL wasSuccessfull, NSArray *downloadedNumbers) {
+        XCTAssert([self.modelController maxNumber]==43);
+        [expectation fulfill];
+        
+    };
     
-    [self.modelController startPopulateDrawNumbers];
+    [self.modelController startPopulateDrawNumbersWithCompletionHandler:processCallBack];
     
     [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
         if (error) {

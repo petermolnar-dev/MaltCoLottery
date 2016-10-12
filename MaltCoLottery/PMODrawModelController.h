@@ -29,7 +29,7 @@
 /**
  Start fetching down the HTTP request, and parse the page in order to fill up with the numbers.
  */
-- (void)startPopulateDrawNumbers;
+- (void)startPopulateDrawNumbersWithCompletionHandler:(void (^_Nonnull)(BOOL wasSuccessfull,  NSArray <NSNumber*>* _Nullable numbers))callback;
 
 
 /**

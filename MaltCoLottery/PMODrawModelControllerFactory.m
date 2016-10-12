@@ -19,7 +19,6 @@
         NSURL *drawURL = [urlGenerator generateDrawURLFromDate:drawDate];
         
         PMODrawModelController *modelController = [[PMODrawModelController alloc] initWithDrawID:drawID fromURL:drawURL];
-        [modelController startPopulateDrawNumbers];
         
         return modelController;
     } else {

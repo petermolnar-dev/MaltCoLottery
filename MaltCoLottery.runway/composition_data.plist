@@ -1187,8 +1187,8 @@
 					ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2
 					NzIwXHBhcmRpcm5hdHVyYWxccWNccGFydGln
 					aHRlbmZhY3RvcjAKClxmMFxmczIwIFxjZjAg
-					XHVwMCBcdWwgXHVsYzAgUE1PRHJhd0xpc3RN
-					b2RlbENvbnRyb2xsZXJ9
+					XHVwMCBcdWwgXHVsYzAgUE1PRHJhd0RTdG9y
+					YWdlTW9kZWxDb250cm9sbGVyfQ==
 					</data>
 					<key>attributesHidden</key>
 					<false/>
@@ -1655,7 +1655,7 @@
 					<key>fillType</key>
 					<integer>0</integer>
 					<key>frame</key>
-					<string>{{358, 664}, {100, 100}}</string>
+					<string>{{358, 664}, {100, 85}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -1754,22 +1754,6 @@
 					dW1iZXJcCi0gbGFzdERyYXdEYXlcCi0gZHJh
 					d0RhdGVzXApcCn0=
 					</data>
-					<key>attributedText2Data</key>
-					<data>
-					e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29j
-					b2FydGYxNTA0CntcZm9udHRibFxmMFxmbmls
-					XGZjaGFyc2V0MCBNZW5sby1SZWd1bGFyO30K
-					e1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1
-					XGJsdWUyNTU7fQp7XCpcZXhwYW5kZWRjb2xv
-					cnRibDtcY3NncmF5XGMxMDAwMDA7fQpccGFy
-					ZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0
-					MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0
-					ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2
-					NzIwXHBhcmRpcm5hdHVyYWxccGFydGlnaHRl
-					bmZhY3RvcjAKClxmMFxmczIwIFxjZjAgLSBk
-					cmF3Q291bnRJblllYXI6eWVhclwKLSBkcmF3
-					Q291bnRGcm9tQmVnaW5uaW5nXAp9
-					</data>
 					<key>attributedText3Data</key>
 					<data>
 					e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29j
@@ -1827,7 +1811,7 @@
 					<key>fillType</key>
 					<integer>0</integer>
 					<key>frame</key>
-					<string>{{110, 808}, {193, 169}}</string>
+					<string>{{110, 808}, {193, 102}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -1937,15 +1921,18 @@
 					MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0
 					ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2
 					NzIwXHBhcmRpcm5hdHVyYWxccGFydGlnaHRl
-					bmZhY3RvcjAKClxmMFxmczIwIFxjZjAgLSBy
-					ZWNlbnRseURyYXduXAotIGxlYXN0UmVjZW50
-					bHlEcmF3blwKLSBzdGF0aXN0aWNhbGx5TG93
-					SW5UaGlzWWVhclwKLSBzdGF0aXN0aWNhbGx5
-					SElnaEluVGhpc1llYXJcCi0gc3RhdGlzdGlj
-					YWxseUxvd1wKLSBzdGF0aXN0aWNhbGx5SGln
-					aFwKLSBtaW5WYWx1ZTpmcm9tRGF0ZTp0b0Rh
-					dGVcCi0gbWF4VmFsdWU6ZnJvbURhdGU6dG9E
-					YXRlfQ==
+					bmZhY3RvcjAKClxmMFxmczIwIFxjZjAgLSBz
+					dGF0Q291bnRcCi0gcmVjZW50bHlEcmF3blwK
+					LSBsZWFzdFJlY2VudGx5RHJhd25cCi0gc3Rh
+					dGlzdGljYWxseUxvd0luVGhpc1llYXJcCi0g
+					c3RhdGlzdGljYWxseUhJZ2hJblRoaXNZZWFy
+					XAotIHN0YXRpc3RpY2FsbHlMb3dcCi0gc3Rh
+					dGlzdGljYWxseUhpZ2hcCi0gbWluVmFsdWU6
+					ZnJvbURhdGU6dG9EYXRlXAotIG1heFZhbHVl
+					OmZyb21EYXRlOnRvRGF0ZVwKLSB1cGRhdGVT
+					dGF0aXN0aWNzRnJvbU51bWJlclN0b3JhZ2U6
+					XAotIGRyYXdDb3VudEluWWVhcjp5ZWFyXAot
+					IGRyYXdDb3VudEZyb21CZWdpbm5pbmdcCn0=
 					</data>
 					<key>attributedText3Data</key>
 					<data>
@@ -2005,7 +1992,7 @@
 					<key>fillType</key>
 					<integer>0</integer>
 					<key>frame</key>
-					<string>{{32, 341}, {212, 171}}</string>
+					<string>{{32, 341}, {244, 236}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -2029,7 +2016,7 @@
 					<key>rotationAngle</key>
 					<integer>0</integer>
 					<key>rotationHandleRadius</key>
-					<real>130</real>
+					<real>145</real>
 					<key>scaleImage</key>
 					<true/>
 					<key>stroke1Color</key>
@@ -2121,7 +2108,7 @@
 					<key>flipped</key>
 					<false/>
 					<key>frame</key>
-					<string>{{138, 512}, {69, 296}}</string>
+					<string>{{154, 577}, {53, 231}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -2341,7 +2328,7 @@
 					<key>flipped</key>
 					<false/>
 					<key>frame</key>
-					<string>{{641, 231}, {-503, 110}}</string>
+					<string>{{641, 231}, {-487, 110}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>
@@ -2451,7 +2438,7 @@
 					<key>flipped</key>
 					<false/>
 					<key>frame</key>
-					<string>{{244, 427}, {48, -196}}</string>
+					<string>{{276, 460}, {16, -229}}</string>
 					<key>hidden</key>
 					<false/>
 					<key>identifier</key>

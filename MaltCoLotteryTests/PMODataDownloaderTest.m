@@ -41,7 +41,7 @@
         }
     };
     
-    [self.downloader downloadDataFromURL:testDownloadURL completion:callbackTest];
+    [self.downloader downloadDataFromURL:testDownloadURL completionHandler:callbackTest];
     [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
         if (error) {
             NSLog(@"Timeout Error: %@", error);
@@ -59,7 +59,7 @@
         
     };
     
-    [self.downloader downloadDataFromURL:testDownloadURL completion:callbackTest];
+    [self.downloader downloadDataFromURL:testDownloadURL completionHandler:callbackTest];
     [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
         if (error) {
             NSLog(@"Timeout Error: %@", error);

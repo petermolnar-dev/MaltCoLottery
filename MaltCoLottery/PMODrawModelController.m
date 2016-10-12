@@ -74,19 +74,23 @@
 }
 
 #pragma mark - Public API
-- (void)startPopulateDrawNumbers {
+- (void)startPopulateDrawNumbersWithCompletionHandler:(void (^)(BOOL wasSuccessfull, NSArray <NSNumber*> *numbers))callback {
     PMOURLDataDownloaderWithBlock *downloader = [[PMOURLDataDownloaderWithBlock alloc] initWithSession:nil];
     
     void (^parseDownloadedData)(BOOL,  NSData * _Nullable ) = ^(BOOL wasSuccessfull, NSData *downloadedData) {
         if (wasSuccessfull) {
             NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:downloadedData];
-            [self willChangeValueForKey:@"numbers"];
             self.draw.numbers = numbers;
-            NSLog(@"Numbers Arrived: %@", self.numbers);
-            [self didChangeValueForKey:@"numbers"];
+//            NSLog(@"Numbers Arrived: %@", self.numbers);
+            if ([numbers count] >0) {
+                callback(TRUE, numbers);
+            } else {
+                callback(FALSE, nil);
+            }
+
         }
     };
-    [downloader downloadDataFromURL:self.drawURL completion:parseDownloadedData];
+    [downloader downloadDataFromURL:self.drawURL completionHandler:parseDownloadedData];
 }
 
 

@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "PMODrawModelController.h"
+#import "PMODrawStorageFactory.h"
+
 
 
 @interface ViewController()
@@ -20,12 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.modelController = [[PMODrawModelController alloc] initWithDrawID:@"20160907" fromURL:[NSURL URLWithString:@"http://www.maltco.com/super/results_draws_sep.php?year=2016&month=9&day=7"]];
+//    NSMutableArray *mockModels = [NSMutableArray array];
+//    PMODrawModelController *mockModelController =[[PMODrawModelController alloc] initWithDrawID:@"20160907" fromURL:[NSURL URLWithString:@"http://www.maltco.com/super/results_draws_sep.php?year=2016&month=9&day=7"]];
+//    [mockModels addObject:mockModelController];
+//    
+//    
+//    PMODrawStorageController *storageController = [[PMODrawStorageController alloc] initWithModelControllers:mockModels];
+//    
 
-    [self addObserver:self
-           forKeyPath:@"modelController.numbers" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-    [self.modelController startPopulateDrawNumbers];
-
+//    PMODrawStorageFactory *storageFactory = [[PMODrawStorageFactory alloc] init];
+//    PMODrawStorageController *storageController = [storageFactory buildStorage];
+//    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,8 +39,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    NSLog(@"KVO triggered");
-}
+
 
 @end

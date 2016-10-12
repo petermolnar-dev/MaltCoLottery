@@ -38,7 +38,7 @@
 }
 
 #pragma mark - Main method
-- (void)downloadDataFromURL:(NSURL *)sourceURL completion:(void (^)(BOOL wasSuccessfull, NSData  *downloadedData))callback {
+- (void)downloadDataFromURL:(NSURL *)sourceURL completionHandler:(void (^)(BOOL wasSuccessfull, NSData  *downloadedData))callback {
     
     NSURLRequest *request = [NSURLRequest requestWithURL:sourceURL];
     

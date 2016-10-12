@@ -35,6 +35,8 @@
 
 - (void)testFactoryBuildsModelControllerWithDates {
     
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading and building up the storage"];
+    
     NSDateComponents *the20040107 = [NSDateComponents new];
     [the20040107 setDay:7];
     [the20040107 setMonth:1];
@@ -47,9 +49,28 @@
     [the20040207 setYear:2004];
     NSDate *toDate =  [[NSCalendar currentCalendar] dateFromComponents:the20040207];
     
+    [self expectationForNotification:PMODrawStorageFilledUp
+                              object:nil
+                             handler:^BOOL(NSNotification * _Nonnull notification) {
+                                 
+                                 XCTAssert([notification.object modelCount]==5);
+                                 XCTAssert([notification.object isKindOfClass:[PMODrawStorageController class]]);
+                                 [expectation fulfill];
+                                 return true;
+                             }];
+    
+    
     PMODrawStorageController *storage = [self.factory buildStorageFromDate:fromDate toDate:toDate];
-    BOOL isModelCount5 = [storage modelCount]==5;
-    XCTAssert([storage isKindOfClass:[PMODrawStorageController class]] && isModelCount5);
+    [storage populateDrawsNumbers];
+    
+    NSLog(@"Storage created: %@", storage);
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Timeout Error: %@ with expectation: %@", error, expectation.description);
+        }
+    }];
+    
     
 }
 
