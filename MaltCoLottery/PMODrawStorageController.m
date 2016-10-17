@@ -9,7 +9,7 @@
 #import "PMODrawStorageController.h"
 
 @interface PMODrawStorageController()
-@property (strong, nonatomic, nullable) NSMutableDictionary <NSString *,PMODrawModelController *> *privateModels;
+@property (strong, nonatomic, nullable) NSMutableDictionary <NSDate *,PMODrawModelController *> *privateModels;
 @property (unsafe_unretained, nonatomic) NSInteger failedCount;
 
 @end
@@ -24,21 +24,31 @@
     if (self) {
         _isAllModelParsed = false;
         _privateModels = [[NSMutableDictionary alloc] init];
-
+        
         if (models) {
             for (PMODrawModelController * currModelController in models) {
-                [_privateModels setObject:currModelController forKey:currModelController.drawID];
+                [_privateModels setObject:currModelController forKey:currModelController.drawDate];
             }
         } else {
             // NO models passed
             _isAllModelParsed = true;
-            [self notifyObservers];
         }
     }
     
     return self;
     
 }
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
+- (instancetype)init
+{
+    @throw [NSException exceptionWithName:@"Not designated initializer"
+                                   reason:@"Use [[PMODrawStorageController alloc] initWithModelControllers:]"
+                                 userInfo:nil];
+    return nil;
+}
+#pragma clang diagnostic pop
 
 
 #pragma mark - Accessors
@@ -53,22 +63,32 @@
 
 #pragma mark - Helpers
 - (void)populateDrawsNumbers {
+    if (!_isAllModelParsed) {
+        [self downloadAndParseDrawNumbers];
+    } else {
+        [self notifyObservers];
+    }
+    
+}
+
+
+- (void)downloadAndParseDrawNumbers {
     __weak __typeof__(self) weakSelf = self;
     __block NSInteger modelsNeedsToBeProcessedCount = [self.privateModels count];
     NSArray *allModelKeys = [self.privateModels allKeys];
     
-    for (NSString * currModelControllerID in allModelKeys) {
+    for (NSDate * currModelControllerID in allModelKeys) {
         PMODrawModelController *currModelController = [self.privateModels objectForKey:currModelControllerID];
         
-        if (currModelController && currModelController.drawID) {
+        if (currModelController && currModelController.drawDate) {
             void (^addModelControllerToStorage)(BOOL,  NSArray * _Nullable ) = ^(BOOL wasSuccessfull, NSArray *downloadedNumbers) {
                 __typeof__(self) strongSelf = weakSelf;
                 modelsNeedsToBeProcessedCount--;
                 NSLog(@"InitialsModelCount = %ld /n", (long)modelsNeedsToBeProcessedCount);
                 if (wasSuccessfull && downloadedNumbers) {
-                    [strongSelf.privateModels setObject:currModelController forKey:currModelController.drawID];
+                    [strongSelf.privateModels setObject:currModelController forKey:currModelController.drawDate];
                 } else {
-                    [strongSelf.privateModels removeObjectForKey:currModelController.drawID];
+                    [strongSelf.privateModels removeObjectForKey:currModelController.drawDate];
                     NSLog(@"Download wasn't succesfull or the numbers list is empty");
                     strongSelf.failedCount++;
                 }
@@ -82,7 +102,6 @@
             [currModelController startPopulateDrawNumbersWithCompletionHandler:addModelControllerToStorage];
         }
     }
-    
 }
 
 #pragma mark - Notifications

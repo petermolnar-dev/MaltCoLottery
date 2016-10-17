@@ -10,9 +10,4 @@
 
 @implementation PMODraw
 
-#pragma mark - Method overrides
-- (NSString *)description {
-    return [NSString stringWithFormat:@"DrawId: %@, numbers: %@", self.drawID, self.numbers];
-}
-
 @end

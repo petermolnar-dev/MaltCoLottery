@@ -19,7 +19,12 @@
 - (void)setUp {
     [super setUp];
     self.draw = [[PMODraw alloc] init];
-    self.draw.drawID = @"20160812";
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:[NSDate date]];
+    [components setDay:-1];
+    NSDate *yesterday = [calendar dateByAddingComponents:components toDate:[NSDate date] options:0];
+    self.draw.drawDate = yesterday;
     self.draw.numbers = @[@3, @7, @46, @23, @13];
     
 }
@@ -29,16 +34,10 @@
     [super tearDown];
 }
 
-//- (void)testDrawMinNumber {
-//    XCTAssertTrue([[self.draw minNumber] intValue]==3);
-//}
-//
-//- (void)testDrawMaxNumber {
-//    XCTAssertTrue([[self.draw maxNumber] intValue]==46);
-//}
+
 
 - (void)testNumbersNotEmpty {
-    XCTAssertNotNil(self.draw.drawID);
+    XCTAssertNotNil(self.draw.drawDate);
 }
 
 - (void)testNumbersNotNil {

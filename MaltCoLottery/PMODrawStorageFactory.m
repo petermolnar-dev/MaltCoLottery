@@ -32,13 +32,12 @@
 #pragma mark - Public API
 
 - (nonnull PMODrawStorageController *)buildStorageFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate {
-    PMODrawModelControllerFactory *modelFactory = [[PMODrawModelControllerFactory alloc] init];
     NSMutableArray <PMODrawModelController *>*modelControllers = [[NSMutableArray alloc] init];
     
     NSArray <NSDate *>*drawDates = [self.dateGenerator drawDaysFromDate:fromDate toDate:toDate];
     
     for (NSDate *currentDate in drawDates) {
-        PMODrawModelController *currentModelController = [modelFactory buildDrawModellControllerFromDrawDate:currentDate];
+        PMODrawModelController *currentModelController = [PMODrawModelControllerFactory buildDrawModellControllerFromDrawDate:currentDate];
         if (currentModelController) {
             [modelControllers addObject:currentModelController];
         }

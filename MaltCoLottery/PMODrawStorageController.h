@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "PMODrawModelController.h"
+#import "PMODrawStorageProtocol.h"
 
 static NSString *const _Nonnull PMODrawStorageFilledUp = @"PMODrawStorageFilledUp";
 
-@interface PMODrawStorageController : NSObject
+
+/**
+ A storage contoller, storing all of the draw information.
+ */
+@interface PMODrawStorageController : NSObject <PMODrawStorageProtocol>
 
 @property (unsafe_unretained, nonatomic) BOOL isAllModelParsed;
 /**
@@ -21,27 +26,13 @@ static NSString *const _Nonnull PMODrawStorageFilledUp = @"PMODrawStorageFilledU
  
  @return PMODrawStorageController with the PMODrawModelControllers passed on.
  */
-- (nullable instancetype)initWithModelControllers:(nullable NSArray <PMODrawModelController *>*) models;
+- (nullable instancetype)initWithModelControllers:(nullable NSArray <PMODrawModelController *>*) models NS_DESIGNATED_INITIALIZER;
 
 /**
  Start populating the numbers for each modelcontroller
  */
 - (void)populateDrawsNumbers;
 
-/**
- Returns the current storage as a Dictionary
-
- @return dictionary of the PMODrawModels
- */
-- (nullable NSDictionary *)models;
-
-
-/**
- The count of the modelcontrollers stored in the storage
-
- @return the count of the models
- */
-- (NSInteger)modelCount;
 
 
 @end

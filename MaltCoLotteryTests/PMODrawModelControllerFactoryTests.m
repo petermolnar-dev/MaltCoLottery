@@ -10,20 +10,10 @@
 #import "PMODrawModelControllerFactory.h"
 
 @interface PMODrawModelControllerFactoryTests : XCTestCase
-@property (strong, nonatomic) PMODrawModelControllerFactory *factory;
+
 @end
 
 @implementation PMODrawModelControllerFactoryTests
-
-- (void)setUp {
-    [super setUp];
-    self.factory = [[PMODrawModelControllerFactory alloc] init];
-}
-
-- (void)tearDown {
-    self.factory = nil;
-    [super tearDown];
-}
 
 - (void)testControllerCreation {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -31,21 +21,37 @@
     
     NSDate *resultDate = [dateFormatter dateFromString:@"20160907"];
     
-    PMODrawModelController *controller =  [self.factory buildDrawModellControllerFromDrawDate:resultDate];
+    PMODrawModelController *controller =  [PMODrawModelControllerFactory buildDrawModellControllerFromDrawDate:resultDate];
     
-    BOOL controllerIsNotNil = controller;
-    BOOL controllerIsValid = [controller.drawID isEqualToString:@"20160907"];
-    
-    XCTAssertTrue(controllerIsNotNil && controllerIsValid);
+    XCTAssert(controller);
+    XCTAssert([controller.drawDate isEqualToDate:resultDate]);
 }
 
+
+- (void)testControllerCreationFromDraw {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat =@"yyyyMMdd";
+    NSArray *referenceNumbers = @[@3, @5, @90];
+    NSDate *resultDate = [dateFormatter dateFromString:@"20160907"];
+    
+    PMODraw *draw =[[PMODraw alloc] init];
+    draw.drawDate = [dateFormatter dateFromString:@"20160907"];
+    draw.numbers = @[@3, @5, @90];
+    
+    PMODrawModelController *controller =  [PMODrawModelControllerFactory buildDrawModelControllerFromExistingDraw:draw];
+    
+    XCTAssert(controller);
+    XCTAssert([controller.drawDate isEqualToDate:resultDate]);
+    XCTAssert([[controller numbers] isEqualToArray:referenceNumbers]);
+}
 //Save the diagnostic state
 #pragma clang diagnostic push
 //Ignore -Wnonnull warnings
 #pragma clang diagnostic ignored "-Wnonnull"
-- (void)testWithNullParameter {
-    XCTAssertThrows([self.factory buildDrawModellControllerFromDrawDate:nil]);
+- (void)testWithDateNullParameter {
+    XCTAssertThrows([PMODrawModelControllerFactory buildDrawModellControllerFromDrawDate:nil]);
 }
+
 //Restore the diagnostic state
 #pragma clang diagnostic pop
 

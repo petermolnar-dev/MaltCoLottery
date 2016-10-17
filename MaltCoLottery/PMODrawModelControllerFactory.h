@@ -19,6 +19,15 @@
 
  @return A newly created modelcontroller for the given |drawDate|
  */
-- (nonnull PMODrawModelController *)buildDrawModellControllerFromDrawDate:(nonnull NSDate *)drawDate;
++ (nonnull PMODrawModelController *)buildDrawModellControllerFromDrawDate:(nonnull NSDate *)drawDate;
+
+/**
+ Build darwModelController from an existing draw.
+
+ @param draw an existing draw. At least the drawdate needs to be filled with a valid date,
+
+ @return A PMODrawModelController, is draw has a proper date.
+ */
++(nonnull PMODrawModelController *)buildDrawModelControllerFromExistingDraw:(nullable id<PMODrawProtocol>)draw;
 
 @end

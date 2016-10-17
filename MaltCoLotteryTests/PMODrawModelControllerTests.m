@@ -11,14 +11,16 @@
 
 @interface PMODrawModelControllerTests : XCTestCase
 @property (strong, nonatomic) PMODrawModelController *modelController;
+
 @end
 
 @implementation PMODrawModelControllerTests
 
 - (void)setUp {
     [super setUp];
-    // Get the URL and drawID
-    self.modelController = [[PMODrawModelController alloc] initWithDrawID:@"20160907" fromURL:[NSURL URLWithString:@"http://www.maltco.com/super/results_draws_sep.php?year=2016&month=9&day=7"]];
+    // Get the URL and drawDate
+    NSDate *drawDate = [self createDateFromComponentsWithYear:2016 withMonth:9 withDay:7];
+    self.modelController = [[PMODrawModelController alloc] initWithDrawDate:drawDate];
 }
 
 - (void)tearDown {
@@ -26,18 +28,16 @@
     [super tearDown];
 }
 
-- (void)testDrawID {
+- (void)testDrawDate {
     
-    XCTAssertTrue([[self.modelController drawID] isEqualToString:@"20160907"]);
+    XCTAssertTrue([[self.modelController drawDate] isEqualToDate:[self createDateFromComponentsWithYear:2016 withMonth:9 withDay:7]]);
     
 }
 
-- (void)testDrawDate {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat =@"yyyyMMdd";
+- (void)testDrawDate2 {
     
-    NSDate *resultDate = [dateFormatter dateFromString:@"20160907"];
-    
+    NSDate *resultDate = [self createDateFromComponentsWithYear:2016 withMonth:9 withDay:7];
+
     XCTAssertTrue([[self.modelController drawDate] isEqualToDate:resultDate]);
     
 }
@@ -112,14 +112,40 @@
  Clang nonnull warning disabled. The test target is to test if the initializer crashes with nonnullable parameter set with nil.
  */
 - (void)testNullDrawID {
-    PMODrawModelController *controller = [[PMODrawModelController alloc] initWithDrawID:nil fromURL:[NSURL URLWithString:@"http://www.maltco.com/super/results_draws_sep.php?year=2016&month=9&day=7"]];
-    XCTAssertTrue(![controller drawID]);
+    XCTAssertThrows([[PMODrawModelController alloc] initWithDrawDate:nil]);
 }
 
-- (void)testNullDrawURL {
-    PMODrawModelController *controller = [[PMODrawModelController alloc] initWithDrawID:@"20160907" fromURL:nil];
-    XCTAssertTrue(![controller drawID]);
-}
 #pragma clang diagnostic pop
+
+#pragma mark - Helpers
+
+- (void)testDesignatedInitializer {
+    PMODraw *draw = [[PMODraw alloc] init];
+    draw.drawDate = [NSDate date];
+    NSArray *referenceNumbers = @[ @8, @13, @19,@20,@33, @97];
+    draw.numbers = referenceNumbers;
+    PMODrawModelController *controller = [[PMODrawModelController alloc] initWithExisitingDraw:draw];
+    XCTAssertNotNil(controller);
+    XCTAssertTrue([[controller numbers] isEqualToArray:referenceNumbers]);
+}
+
+
+- (NSDate *)createDateFromComponentsWithYear:(NSInteger)year withMonth:(NSInteger)month withDay:(NSInteger)day {
+    
+    NSCalendar *calendar = [[NSCalendar alloc]
+                            initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    // Create a date from components
+    
+    NSDateComponents *firstDrawDateComponents = [[NSDateComponents alloc]init];
+    
+    firstDrawDateComponents.year = year;
+    firstDrawDateComponents.month = month;
+    firstDrawDateComponents.day = day;
+    
+    firstDrawDateComponents.hour = 13;
+    
+    
+    return  [calendar dateFromComponents:firstDrawDateComponents];
+}
 
 @end

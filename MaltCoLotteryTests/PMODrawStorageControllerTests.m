@@ -35,7 +35,8 @@
 - (void)testCreationWithOneModel {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Downloading and presenting numbers"];
     NSMutableArray *mockModels = [NSMutableArray array];
-    PMODrawModelController *mockModelController =[[PMODrawModelController alloc] initWithDrawID:@"20160907" fromURL:[NSURL URLWithString:@"http://www.maltco.com/super/results_draws_sep.php?year=2016&month=9&day=7"]];
+    NSDate *drawDate = [self createDateFromComponentsWithYear:2016 withMonth:9 withDay:7];
+    PMODrawModelController *mockModelController =[[PMODrawModelController alloc] initWithDrawDate:drawDate];
     [mockModels addObject:mockModelController];
     
     [self expectationForNotification:PMODrawStorageFilledUp
@@ -55,6 +56,25 @@
         }
     }];
     
+}
+
+
+- (NSDate *)createDateFromComponentsWithYear:(NSInteger)year withMonth:(NSInteger)month withDay:(NSInteger)day {
+    
+    NSCalendar *calendar = [[NSCalendar alloc]
+                            initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    // Create a date from components
+    
+    NSDateComponents *firstDrawDateComponents = [[NSDateComponents alloc]init];
+    
+    firstDrawDateComponents.year = year;
+    firstDrawDateComponents.month = month;
+    firstDrawDateComponents.day = day;
+    
+    firstDrawDateComponents.hour = 13;
+    
+    
+    return  [calendar dateFromComponents:firstDrawDateComponents];
 }
 
 

@@ -1,17 +1,14 @@
 //
-//  PMODraw.h
+//  PMODrawProtocol.h
 //  MaltCoLottery
 //
-//  Created by Peter Molnar on 07/08/2016.
+//  Created by Peter Molnar on 16/10/2016.
 //  Copyright © 2016 Peter Molnar. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "PMODrawProtocol.h"
-/**
- PMODraw: a pure and immutable dataset of each draw.
- */
-@interface PMODraw : NSObject <PMODrawProtocol>
+
+@protocol PMODrawProtocol <NSObject>
 
 /**
  drawDate : The date of the draw.
@@ -24,6 +21,5 @@
  Can be nil!
  */
 @property (strong, nonatomic, nullable) NSArray<NSNumber*> *numbers;
-
 
 @end
