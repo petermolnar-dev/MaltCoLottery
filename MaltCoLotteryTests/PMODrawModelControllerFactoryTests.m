@@ -34,8 +34,7 @@
     NSArray *referenceNumbers = @[@3, @5, @90];
     NSDate *resultDate = [dateFormatter dateFromString:@"20160907"];
     
-    PMODraw *draw =[[PMODraw alloc] init];
-    draw.drawDate = [dateFormatter dateFromString:@"20160907"];
+    PMODraw *draw =[[PMODraw alloc] initWithDrawDate:[dateFormatter dateFromString:@"20160907"]];
     draw.numbers = @[@3, @5, @90];
     
     PMODrawModelController *controller =  [PMODrawModelControllerFactory buildDrawModelControllerFromExistingDraw:draw];

@@ -21,8 +21,7 @@
 @implementation PMODrawModelController
 
 - (instancetype)initWithDrawDate:(NSDate *)drawDate {
-    PMODraw *draw = [[PMODraw alloc] init];
-    draw.drawDate = drawDate;
+    PMODraw *draw = [[PMODraw alloc] initWithDrawDate:drawDate];
     self = [self initWithExisitingDraw:draw];
     
     PMODrawURLGenerator *urlGenerator = [[PMODrawURLGenerator alloc] init];

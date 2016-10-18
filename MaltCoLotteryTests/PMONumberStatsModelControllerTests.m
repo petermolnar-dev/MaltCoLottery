@@ -37,7 +37,7 @@
 
 
 - (void)testUpdatingStatisticsWithoutValidDraw {
-    
+    PMODraw *draw;
 //    PMODrawModelController *modelController1 = [[PMODrawModelController alloc] initWithDrawDate:drawDate fromURL:[NSURL URLWithString:@"http://www.maltco.com/super/results_draws_sep.php?year=2016&month=9&day=7"]];
     
 //    PMODrawStorageController *storageController = [[PMODrawStorageController alloc] initWithModelControllers:(NSArray<PMODrawModelController *> *)];

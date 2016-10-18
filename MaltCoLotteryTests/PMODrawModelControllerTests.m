@@ -120,8 +120,7 @@
 #pragma mark - Helpers
 
 - (void)testDesignatedInitializer {
-    PMODraw *draw = [[PMODraw alloc] init];
-    draw.drawDate = [NSDate date];
+    PMODraw *draw = [[PMODraw alloc] initWithDrawDate:[NSDate date]];
     NSArray *referenceNumbers = @[ @8, @13, @19,@20,@33, @97];
     draw.numbers = referenceNumbers;
     PMODrawModelController *controller = [[PMODrawModelController alloc] initWithExisitingDraw:draw];

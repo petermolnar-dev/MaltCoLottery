@@ -18,13 +18,13 @@
 
 - (void)setUp {
     [super setUp];
-    self.draw = [[PMODraw alloc] init];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:[NSDate date]];
     [components setDay:-1];
     NSDate *yesterday = [calendar dateByAddingComponents:components toDate:[NSDate date] options:0];
-    self.draw.drawDate = yesterday;
+
+    self.draw = [[PMODraw alloc] initWithDrawDate:yesterday];
     self.draw.numbers = @[@3, @7, @46, @23, @13];
     
 }
@@ -43,5 +43,14 @@
 - (void)testNumbersNotNil {
     XCTAssertNotNil(self.draw.numbers);
 }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
+- (void)testWithEmptyDate {
+    XCTAssertThrows([[PMODraw alloc] initWithDrawDate:nil]);
+}
+#pragma clang diagnostic pop
 
+- (void)testWithDefaultinitializer {
+    XCTAssertThrows([[PMODraw alloc] init]);
+}
 @end

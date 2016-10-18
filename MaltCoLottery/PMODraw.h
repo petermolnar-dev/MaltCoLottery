@@ -26,4 +26,14 @@
 @property (strong, nonatomic, nullable) NSArray<NSNumber*> *numbers;
 
 
+
+/**
+  Designated initializer for a draw. There is no draw without drawdate, so this is mandatory at the init tim
+
+ @param drawDate date of the draw
+
+ @return an instance of PMODraw
+ */
+- (nullable instancetype)initWithDrawDate:(nonnull NSDate *)drawDate NS_DESIGNATED_INITIALIZER;
+
 @end
