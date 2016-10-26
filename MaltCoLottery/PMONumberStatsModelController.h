@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "PMODrawStorageProtocol.h"
+#import "PMOCalendarOperatedAbstract.h"
 
 /**
  Modelcontroller serving the statistical data from the draws
  */
-@interface PMONumberStatsModelController : NSObject
+@interface PMONumberStatsModelController : PMOCalendarOperatedAbstract
 
 
 /**
@@ -49,7 +50,6 @@
 
 - (nullable NSNumber *)minValueFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate;
 - (nullable NSNumber *)maxValueFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate;
-- (NSInteger)drawCountForThisYear:(nonnull NSNumber *)number;
 - (NSInteger)drawCountAllTimesForNumber:(nonnull NSNumber *)number;
 
 @end

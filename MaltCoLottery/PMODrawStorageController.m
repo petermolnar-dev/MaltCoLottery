@@ -27,7 +27,11 @@
         
         if (models) {
             for (PMODrawModelController * currModelController in models) {
-                [_privateModels setObject:currModelController forKey:currModelController.drawDate];
+                if ([_privateModels objectForKey:[currModelController drawDate]]) {
+                    NSLog(@"There is already a draw with that date");
+                } else {
+                    [_privateModels setObject:currModelController forKey:currModelController.drawDate];
+                }
             }
         } else {
             // NO models passed
