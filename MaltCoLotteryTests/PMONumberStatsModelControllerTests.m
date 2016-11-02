@@ -136,18 +136,22 @@
     NSDateComponents *the20040107 = [NSDateComponents new];
     [the20040107 setDay:7];
     [the20040107 setMonth:1];
-    [the20040107 setYear:year];
+    [the20040107 setYear:2004];
     NSDate *firstDrawDate = [[NSCalendar currentCalendar] dateFromComponents:the20040107];
     
     NSDateComponents *the20040207 = [NSDateComponents new];
     [the20040207 setDay:7];
     [the20040207 setMonth:2];
     [the20040207 setYear:year];
-    NSDate *monthAfterFirstDrawDate =  [[NSCalendar currentCalendar] dateFromComponents:the20040207];
+    NSDate *sameYearDrawDate =  [[NSCalendar currentCalendar] dateFromComponents:the20040207];
     
-    NSArray *todaysNumbers = @[@40, @41, @42, @43, @40];
-    NSArray *firstNumbers = @[@1, @20, @30, @42, @40];
-    NSArray *monthafterFirstNumbers = @[@41, @20, @30, @40, @40, @43];
+    NSArray *highInThisYear = @[@40, @41, @43];
+    NSArray *lowOnThisYear = @[@20, @30, @42];
+    
+    NSArray *firstNumbers = @[@1, @20, @30, @42, @40, @44];
+ 
+    NSArray *sameYearNumbers = @[ @20, @30, @40, @41, @43];
+    NSArray *todaysNumbers = @[@40, @41, @42, @43];
     
     
     PMODraw *drawToday = [[PMODraw alloc] initWithDrawDate:today];
@@ -156,8 +160,8 @@
     PMODraw *firstDraw = [[PMODraw alloc]initWithDrawDate:firstDrawDate];
     firstDraw.numbers = firstNumbers;
     
-    PMODraw *monthAfterFirstDraw = [[PMODraw alloc] initWithDrawDate:monthAfterFirstDrawDate];
-    monthAfterFirstDraw.numbers = monthafterFirstNumbers;
+    PMODraw *monthAfterFirstDraw = [[PMODraw alloc] initWithDrawDate:sameYearDrawDate];
+    monthAfterFirstDraw.numbers = sameYearNumbers;
     
     PMODrawModelController *modelToday = [[PMODrawModelController alloc] initWithExisitingDraw:drawToday];
     PMODrawModelController *modelFirstDraw = [[PMODrawModelController alloc] initWithExisitingDraw:firstDraw];
@@ -166,10 +170,11 @@
     
     PMODrawStorageController *storageController = [[PMODrawStorageController alloc] initWithModelControllers:controllers];
     
-    PMONumberStatsModelController *statsModelController = [[PMONumberStatsModelController alloc] initWithNumberCount:@45 arraySizeForStatistics:1];
+    PMONumberStatsModelController *statsModelController = [[PMONumberStatsModelController alloc] initWithNumberCount:@45 arraySizeForStatistics:3];
     [statsModelController updateStatisticFromNumberStorage:storageController];
-    XCTAssert([[statsModelController statisticalyHighInThisYear] isEqualToArray:@[@40]]);
-    XCTAssert([[statsModelController statisticalyLowInThisYear] isEqualToArray:@[@1]]);
+    NSLog(@"%@",[statsModelController statisticalyHighInThisYear]);
+    XCTAssert([[statsModelController statisticalyHighInThisYear] isEqualToArray:highInThisYear]);
+    XCTAssert([[statsModelController statisticalyLowInThisYear] isEqualToArray:lowOnThisYear]);
     
 }
 

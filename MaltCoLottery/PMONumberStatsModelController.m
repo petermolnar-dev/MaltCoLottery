@@ -10,6 +10,9 @@
 #import "PMONumberStat.h"
 #import "PMODrawDataProtocol.h"
 
+#define CALL_ORIGIN NSLog(@"Origin: [%@]", [[[[NSThread callStackSymbols] objectAtIndex:1] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[]"]] objectAtIndex:1])
+
+
 @interface PMONumberStatsModelController()
 
 /**
@@ -23,6 +26,13 @@
 @property (strong, nonatomic, nonnull) NSNumber *numbersInGame;
 
 @property (nonatomic) NSInteger arraySizeForStatistics;
+
+
+
+/**
+ Initialize an empty mutable directory of numberStats
+ */
+- (void)createEmptyStorageForNumberOfStatistics;
 
 
 @end
@@ -101,12 +111,12 @@
 }
 
 - (nullable NSArray *)statisticalyLowInThisYear {
-    return [self statisticalyHighCountFromTheEnd:NO];
+    return [self statisticalyHighThisYearCountFromTheEnd:NO];
 }
 
 - (nullable NSArray *)statisticalyHighInThisYear {
     
-    return [self statisticalyHighCountFromTheEnd:YES];
+    return [self statisticalyHighThisYearCountFromTheEnd:YES];
 }
 
 - (nullable NSArray *)statisticalyHighThisYearCountFromTheEnd:(BOOL)countFromTheEnd {
@@ -142,7 +152,7 @@
 - (NSNumber *)maxOrMinValueFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate countFromTheEnd:(BOOL)countFromTheEnd {
     NSArray *orderedArray = [self orderedArrayByNumberFromNumberStatsDictionary:self.numberStats];
     NSArray *filtereadArrayForThisYear = [self filteredNumberStatisticsBetweenDates:fromDate toDate:toDate fromNumberStats:orderedArray];
-
+    
     return [self arrayRangeFromArray:filtereadArrayForThisYear countFromTheEnd:countFromTheEnd resultArraySize:1].firstObject.number;
 }
 
@@ -192,7 +202,8 @@
             NSPredicate *dateRangePredicate = [NSPredicate predicateWithFormat:@"self >= %@ AND self <= %@", fromDate,toDate];
             NSArray *filteredArray = [currNumStatistic.drawDates filteredArrayUsingPredicate:dateRangePredicate];
             if ([filteredArray count] >0) {
-                [resultArray addObject:currNumStatistic];
+                PMONumberStat *numberStatWithDrawsBetweenDates = [[PMONumberStat alloc] initWithNumber:currNumStatistic.number drawDates:filteredArray];
+                [resultArray addObject:numberStatWithDrawsBetweenDates];
             }
         }
     }
@@ -257,10 +268,16 @@
 #pragma mark - Subarraying helper functions
 - (NSArray <PMONumberStat *>*)arrayRangeFromArray:(NSArray <PMONumberStat *>*)sourceArray countFromTheEnd:(BOOL)countFromTheEnd resultArraySize:(NSInteger)resultArraySize {
     NSArray <PMONumberStat *>*resultSubArray;
-    if (countFromTheEnd) {
-        resultSubArray = [sourceArray subarrayWithRange:NSMakeRange(MAX(0, [sourceArray  count] - resultArraySize), MIN(resultArraySize, [sourceArray  count]))];
+    if ([sourceArray count]>0) {
+        if (countFromTheEnd) {
+            resultSubArray = [sourceArray subarrayWithRange:NSMakeRange(MAX(0, [sourceArray  count] - resultArraySize), MIN(resultArraySize, [sourceArray  count]))];
+        } else {
+            resultSubArray = [sourceArray subarrayWithRange:NSMakeRange(0, MIN([sourceArray  count],resultArraySize))];
+        }
     } else {
-        resultSubArray = [sourceArray subarrayWithRange:NSMakeRange(0, MIN([sourceArray  count],resultArraySize))];
+        NSLog(@"Statistical Array is empty.");
+        CALL_ORIGIN;
+    
     }
     
     return resultSubArray;
@@ -279,7 +296,8 @@
 #pragma mark - Date helpers
 - (NSInteger)yearFromDate:(NSDate *)date {
     NSDateComponents *components = [self.calendar components:NSCalendarUnitYear fromDate:date];
-    return [components year];
+    NSInteger year = [components year];
+    return year;
 }
 
 
@@ -289,7 +307,8 @@
     [resultDate setMonth:1];
     [resultDate setYear:[self yearFromDate:date]];
     
-    return [self.calendar dateFromComponents:resultDate];
+    NSDate *firstDayOfYear = [self.calendar dateFromComponents:resultDate];
+    return firstDayOfYear;
     
 }
 

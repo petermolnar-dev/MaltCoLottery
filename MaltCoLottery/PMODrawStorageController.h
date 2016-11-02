@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PMODrawModelController.h"
+#import "PMOProgressDelegate.h"
 #import "PMODrawStorageProtocol.h"
 
 static NSString *const _Nonnull PMODrawStorageFilledUp = @"PMODrawStorageFilledUp";
@@ -18,6 +19,7 @@ static NSString *const _Nonnull PMODrawStorageFilledUp = @"PMODrawStorageFilledU
  */
 @interface PMODrawStorageController : NSObject <PMODrawStorageProtocol>
 
+@property (weak, nonatomic, nullable) id <PMOProgressDelegate> progressDelegate;
 @property (unsafe_unretained, nonatomic) BOOL isAllModelParsed;
 /**
  Designated initializer of PMODrawStorageController

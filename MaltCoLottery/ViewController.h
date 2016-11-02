@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PMOProgressDelegate.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <PMOProgressDelegate>
 
 
 @end

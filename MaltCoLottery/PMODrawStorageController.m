@@ -7,6 +7,7 @@
 //
 
 #import "PMODrawStorageController.h"
+#import "PMOParsingStateNotifications.h"
 
 @interface PMODrawStorageController()
 @property (strong, nonatomic, nullable) NSMutableDictionary <NSDate *,PMODrawModelController *> *privateModels;
@@ -79,33 +80,42 @@
 - (void)downloadAndParseDrawNumbers {
     __weak __typeof__(self) weakSelf = self;
     __block NSInteger modelsNeedsToBeProcessedCount = [self.privateModels count];
+    NSInteger modelsCount = modelsNeedsToBeProcessedCount;
     NSArray *allModelKeys = [self.privateModels allKeys];
+    NSOperationQueue *parsingQueue = [[NSOperationQueue alloc] init];
     
-    for (NSDate * currModelControllerID in allModelKeys) {
-        PMODrawModelController *currModelController = [self.privateModels objectForKey:currModelControllerID];
-        
-        if (currModelController && currModelController.drawDate) {
-            void (^addModelControllerToStorage)(BOOL,  NSArray * _Nullable ) = ^(BOOL wasSuccessfull, NSArray *downloadedNumbers) {
-                __typeof__(self) strongSelf = weakSelf;
-                modelsNeedsToBeProcessedCount--;
-                NSLog(@"InitialsModelCount = %ld /n", (long)modelsNeedsToBeProcessedCount);
-                if (wasSuccessfull && downloadedNumbers) {
-                    [strongSelf.privateModels setObject:currModelController forKey:currModelController.drawDate];
-                } else {
-                    [strongSelf.privateModels removeObjectForKey:currModelController.drawDate];
-                    NSLog(@"Download wasn't succesfull or the numbers list is empty");
-                    strongSelf.failedCount++;
-                }
-                if (modelsNeedsToBeProcessedCount == 0) {
-                    strongSelf.isAllModelParsed = true;
-                    NSLog(@"Failed count: %ld", strongSelf.failedCount);
-                    [strongSelf notifyObservers];
-                }
-            };
-            usleep(50000);
-            [currModelController startPopulateDrawNumbersWithCompletionHandler:addModelControllerToStorage];
+    [parsingQueue addOperationWithBlock:^{
+        for (NSDate * currModelControllerID in allModelKeys) {
+            PMODrawModelController *currModelController = [self.privateModels objectForKey:currModelControllerID];
+            
+            if (currModelController && currModelController.drawDate) {
+                void (^addModelControllerToStorage)(BOOL,  NSArray * _Nullable ) = ^(BOOL wasSuccessfull, NSArray *downloadedNumbers) {
+                    __typeof__(self) strongSelf = weakSelf;
+                    modelsNeedsToBeProcessedCount--;
+                    float percentage = (modelsCount*1.0-modelsNeedsToBeProcessedCount*1.0)/modelsCount*1.0;
+                    [strongSelf.progressDelegate updateProgressWithPercentage:percentage];
+                    NSLog(@"InitialsModelCount = %ld /n", (long)modelsNeedsToBeProcessedCount);
+                    if (wasSuccessfull && downloadedNumbers) {
+                        [strongSelf.privateModels setObject:currModelController forKey:currModelController.drawDate];
+                    } else {
+                        [strongSelf.privateModels removeObjectForKey:currModelController.drawDate];
+                        NSLog(@"Download wasn't succesfull or the numbers list is empty");
+                        strongSelf.failedCount++;
+                    }
+                    if (modelsNeedsToBeProcessedCount == 0) {
+                        strongSelf.isAllModelParsed = true;
+                        NSLog(@"Failed count: %ld", strongSelf.failedCount);
+                        [strongSelf notifyObservers];
+                    }
+                };
+                // Give some rest to the server, otherwise our request considered
+                // as a hacking activity
+                [NSThread sleepForTimeInterval:.1];
+                [currModelController startPopulateDrawNumbersWithCompletionHandler:addModelControllerToStorage];
+            }
         }
-    }
+    }];
+
 }
 
 #pragma mark - Notifications
@@ -115,5 +125,7 @@
                                                         object:self
                                                       userInfo:nil];
 }
+
+
 
 @end

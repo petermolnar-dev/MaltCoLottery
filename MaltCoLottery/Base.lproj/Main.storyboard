@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,13 +16,64 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hB-2m-5Vo">
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycE-r0-08I">
+                                <state key="normal" title="Get the statistics"/>
+                                <connections>
+                                    <action selector="downloadAndBuildStatistics:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lVI-4Q-70f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloaded:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRJ-sD-Ori">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ujy-lG-KZF"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Draw statistics:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QjD-Ns-s1P">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3hB-2m-5Vo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3fV-Qn-IKm"/>
+                            <constraint firstItem="Ujy-lG-KZF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="69" id="4XI-h0-GlA"/>
+                            <constraint firstItem="Ujy-lG-KZF" firstAttribute="centerY" secondItem="3hB-2m-5Vo" secondAttribute="centerY" id="79L-wT-0Oo"/>
+                            <constraint firstItem="3hB-2m-5Vo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9fP-6f-uPh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3hB-2m-5Vo" secondAttribute="bottom" constant="20" id="BXe-xH-xTm"/>
+                            <constraint firstItem="QjD-Ns-s1P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="Ih7-8v-2nG"/>
+                            <constraint firstItem="NRJ-sD-Ori" firstAttribute="trailing" secondItem="Ujy-lG-KZF" secondAttribute="trailing" id="KTC-fr-Exs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QjD-Ns-s1P" secondAttribute="trailing" constant="8" id="SBC-Tz-Qjg"/>
+                            <constraint firstItem="3hB-2m-5Vo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VOI-Ll-isV"/>
+                            <constraint firstItem="Ujy-lG-KZF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XLV-bk-dDT"/>
+                            <constraint firstItem="Ujy-lG-KZF" firstAttribute="top" secondItem="NRJ-sD-Ori" secondAttribute="bottom" constant="8" symbolic="YES" id="YPa-4p-oeQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QjD-Ns-s1P" secondAttribute="bottom" constant="8" id="aok-SP-M85"/>
+                            <constraint firstItem="QjD-Ns-s1P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="asR-eQ-4jr"/>
+                            <constraint firstItem="Ujy-lG-KZF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dwv-ld-7tW"/>
+                            <constraint firstItem="ycE-r0-08I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e6d-Wp-5Mn"/>
+                            <constraint firstItem="3hB-2m-5Vo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jAl-dm-NiU"/>
+                            <constraint firstItem="Ujy-lG-KZF" firstAttribute="centerX" secondItem="3hB-2m-5Vo" secondAttribute="centerX" id="jE9-3t-LsF"/>
+                            <constraint firstItem="NRJ-sD-Ori" firstAttribute="leading" secondItem="Ujy-lG-KZF" secondAttribute="leading" id="rcf-tn-MZT"/>
+                            <constraint firstItem="ycE-r0-08I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yS3-VP-Xfc"/>
+                            <constraint firstItem="3hB-2m-5Vo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yso-yY-6xj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="finalStatisticsText" destination="QjD-Ns-s1P" id="GoK-3w-Dbi"/>
+                        <outlet property="percentageLabel" destination="NRJ-sD-Ori" id="C5j-i5-80x"/>
+                        <outlet property="progressView" destination="Ujy-lG-KZF" id="s7T-iq-W54"/>
+                        <outlet property="statisticsView" destination="3hB-2m-5Vo" id="6Zz-ad-LOV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.75" y="95.070422535211264"/>
         </scene>
     </scenes>
 </document>

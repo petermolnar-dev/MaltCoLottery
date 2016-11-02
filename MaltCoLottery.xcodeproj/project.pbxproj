@@ -60,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C710BA4D1DC3B1E2001FEC1A /* PMOParsingStateNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMOParsingStateNotifications.h; sourceTree = "<group>"; };
+		C71311661DC6841F001AB1E3 /* PMOProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOProgressDelegate.h; sourceTree = "<group>"; };
 		C71DC5771CEF99F900EACB3D /* MaltCoLottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaltCoLottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71DC57B1CEF99F900EACB3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C71DC57D1CEF99F900EACB3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -301,11 +303,13 @@
 			isa = PBXGroup;
 			children = (
 				C7AAF7F81D54696E00D98AD3 /* PMODataDownloadNotifications.h */,
+				C710BA4D1DC3B1E2001FEC1A /* PMOParsingStateNotifications.h */,
 				C7F6B96C1D98F9F100645628 /* PMOURLSessionDefaults.h */,
 				C7AAF7F91D54696E00D98AD3 /* PMOExecutionNotifier.h */,
 				C771C7331DB01D4C00C592D4 /* PMODrawStorageProtocol.h */,
 				C771C7341DB0A43D00C592D4 /* PMODrawDataProtocol.h */,
 				C771C7351DB41D0A00C592D4 /* PMODrawProtocol.h */,
+				C71311661DC6841F001AB1E3 /* PMOProgressDelegate.h */,
 			);
 			name = "Headers and protocolls";
 			sourceTree = "<group>";

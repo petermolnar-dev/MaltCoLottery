@@ -103,7 +103,6 @@
         if (wasSuccessfull) {
             NSArray *numbers = [PMOHTMLParser drawNumbersFromRawData:downloadedData];
             self.draw.numbers = numbers;
-            //            NSLog(@"Numbers Arrived: %@", self.numbers);
             if ([numbers count] >0) {
                 callback(TRUE, numbers);
             } else {
