@@ -36,6 +36,11 @@
 		C7AAF7FF1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7FE1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m */; };
 		C7D12FC61D59AA3400D47DF5 /* PMODateGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */; };
 		C7D12FC91D59ABF100D47DF5 /* PMODrawStorageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */; };
+		C7F291341DDA501D0036A798 /* PMOStatisticAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F291331DDA501D0036A798 /* PMOStatisticAbstract.m */; };
+		C7F291371DDA51090036A798 /* PMORecentlyDrawn.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F291361DDA51090036A798 /* PMORecentlyDrawn.m */; };
+		C7F2913B1DDA62C80036A798 /* PMOStatisticallyLowOrHigh.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2913A1DDA62C80036A798 /* PMOStatisticallyLowOrHigh.m */; };
+		C7F2913E1DDA63F00036A798 /* PMOStatisticallyHighOrLowForThisYear.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2913D1DDA63F00036A798 /* PMOStatisticallyHighOrLowForThisYear.m */; };
+		C7F291411DDA64CC0036A798 /* PMOStatisticallyMinMaxValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F291401DDA64CC0036A798 /* PMOStatisticallyMinMaxValue.m */; };
 		C7F2AC141D80388000308412 /* PMODrawModelControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2AC131D80388000308412 /* PMODrawModelControllerTests.m */; };
 		C7F59BC91D5E67A8008582C2 /* PMODrawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */; };
 		C7F6B9661D8FB80700645628 /* PMODrawModelControllerFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F6B9651D8FB80700645628 /* PMODrawModelControllerFactoryTests.m */; };
@@ -118,6 +123,17 @@
 		C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODateGeneratorTests.m; sourceTree = "<group>"; };
 		C7D12FC71D59ABF100D47DF5 /* PMODrawStorageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawStorageFactory.h; sourceTree = "<group>"; };
 		C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawStorageFactory.m; sourceTree = "<group>"; };
+		C7F291321DDA501D0036A798 /* PMOStatisticAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOStatisticAbstract.h; sourceTree = "<group>"; };
+		C7F291331DDA501D0036A798 /* PMOStatisticAbstract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOStatisticAbstract.m; sourceTree = "<group>"; };
+		C7F291351DDA51090036A798 /* PMORecentlyDrawn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMORecentlyDrawn.h; sourceTree = "<group>"; };
+		C7F291361DDA51090036A798 /* PMORecentlyDrawn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMORecentlyDrawn.m; sourceTree = "<group>"; };
+		C7F291381DDA53440036A798 /* PMOStatisticProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOStatisticProtocol.h; sourceTree = "<group>"; };
+		C7F291391DDA62C80036A798 /* PMOStatisticallyLowOrHigh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOStatisticallyLowOrHigh.h; sourceTree = "<group>"; };
+		C7F2913A1DDA62C80036A798 /* PMOStatisticallyLowOrHigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOStatisticallyLowOrHigh.m; sourceTree = "<group>"; };
+		C7F2913C1DDA63F00036A798 /* PMOStatisticallyHighOrLowForThisYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOStatisticallyHighOrLowForThisYear.h; sourceTree = "<group>"; };
+		C7F2913D1DDA63F00036A798 /* PMOStatisticallyHighOrLowForThisYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOStatisticallyHighOrLowForThisYear.m; sourceTree = "<group>"; };
+		C7F2913F1DDA64CC0036A798 /* PMOStatisticallyMinMaxValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOStatisticallyMinMaxValue.h; sourceTree = "<group>"; };
+		C7F291401DDA64CC0036A798 /* PMOStatisticallyMinMaxValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOStatisticallyMinMaxValue.m; sourceTree = "<group>"; };
 		C7F2AC131D80388000308412 /* PMODrawModelControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawModelControllerTests.m; sourceTree = "<group>"; };
 		C7F59BC81D5E67A8008582C2 /* PMODrawTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawTests.m; sourceTree = "<group>"; };
 		C7F6B9651D8FB80700645628 /* PMODrawModelControllerFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawModelControllerFactoryTests.m; sourceTree = "<group>"; };
@@ -174,6 +190,7 @@
 		C71DC5791CEF99F900EACB3D /* MaltCoLottery */ = {
 			isa = PBXGroup;
 			children = (
+				C7F291311DDA4FBD0036A798 /* Statistic Classes */,
 				C77922801D6113080075319F /* Abstract Classes */,
 				C7A838E91D5856680095B261 /* Factories */,
 				C7A838E21D5855E40095B261 /* ModelControllers */,
@@ -234,6 +251,8 @@
 		C77922801D6113080075319F /* Abstract Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C7F291321DDA501D0036A798 /* PMOStatisticAbstract.h */,
+				C7F291331DDA501D0036A798 /* PMOStatisticAbstract.m */,
 				C77922811D61132F0075319F /* PMOCalendarOperatedAbstract.h */,
 				C77922821D61132F0075319F /* PMOCalendarOperatedAbstract.m */,
 			);
@@ -302,6 +321,7 @@
 		C7AAF7F71D54694B00D98AD3 /* Headers and protocolls */ = {
 			isa = PBXGroup;
 			children = (
+				C7F291381DDA53440036A798 /* PMOStatisticProtocol.h */,
 				C7AAF7F81D54696E00D98AD3 /* PMODataDownloadNotifications.h */,
 				C710BA4D1DC3B1E2001FEC1A /* PMOParsingStateNotifications.h */,
 				C7F6B96C1D98F9F100645628 /* PMOURLSessionDefaults.h */,
@@ -323,6 +343,21 @@
 				C7AAF7FC1D5726B500D98AD3 /* PMODraw.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		C7F291311DDA4FBD0036A798 /* Statistic Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C7F291351DDA51090036A798 /* PMORecentlyDrawn.h */,
+				C7F291361DDA51090036A798 /* PMORecentlyDrawn.m */,
+				C7F291391DDA62C80036A798 /* PMOStatisticallyLowOrHigh.h */,
+				C7F2913A1DDA62C80036A798 /* PMOStatisticallyLowOrHigh.m */,
+				C7F2913C1DDA63F00036A798 /* PMOStatisticallyHighOrLowForThisYear.h */,
+				C7F2913D1DDA63F00036A798 /* PMOStatisticallyHighOrLowForThisYear.m */,
+				C7F2913F1DDA64CC0036A798 /* PMOStatisticallyMinMaxValue.h */,
+				C7F291401DDA64CC0036A798 /* PMOStatisticallyMinMaxValue.m */,
+			);
+			name = "Statistic Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,12 +495,17 @@
 				C7A838EF1D58595F0095B261 /* PMOHTMLParser.m in Sources */,
 				C75CF0F41CEFA5E000FF9424 /* TFHppleElement.m in Sources */,
 				C75CF0F51CEFA5E000FF9424 /* XPathQuery.m in Sources */,
+				C7F291341DDA501D0036A798 /* PMOStatisticAbstract.m in Sources */,
 				C75CF0F31CEFA5E000FF9424 /* TFHpple.m in Sources */,
+				C7F291371DDA51090036A798 /* PMORecentlyDrawn.m in Sources */,
 				C77922831D61132F0075319F /* PMOCalendarOperatedAbstract.m in Sources */,
 				C7F6B96B1D98F68900645628 /* PMOURLDataDownloaderWithBlock.m in Sources */,
 				C71DC5821CEF99F900EACB3D /* ViewController.m in Sources */,
+				C7F291411DDA64CC0036A798 /* PMOStatisticallyMinMaxValue.m in Sources */,
 				C771C7301DAE8FA500C592D4 /* PMONumberStatsModelController.m in Sources */,
+				C7F2913B1DDA62C80036A798 /* PMOStatisticallyLowOrHigh.m in Sources */,
 				C7A15E1A1D5DA03B0067C239 /* PMONumberStat.m in Sources */,
+				C7F2913E1DDA63F00036A798 /* PMOStatisticallyHighOrLowForThisYear.m in Sources */,
 				C7AAF7F01D52457200D98AD3 /* PMODrawURLGenerator.m in Sources */,
 				C771C6FE1D9D295A00C592D4 /* PMODrawStorageController.m in Sources */,
 				C7AAF7FD1D5726B500D98AD3 /* PMODraw.m in Sources */,

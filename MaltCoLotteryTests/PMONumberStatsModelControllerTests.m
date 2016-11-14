@@ -175,6 +175,7 @@
     NSLog(@"%@",[statsModelController statisticalyHighInThisYear]);
     XCTAssert([[statsModelController statisticalyHighInThisYear] isEqualToArray:highInThisYear]);
     XCTAssert([[statsModelController statisticalyLowInThisYear] isEqualToArray:lowOnThisYear]);
+
     
 }
 

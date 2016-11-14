@@ -73,7 +73,13 @@
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         
-        NSMutableString *statisticString = [NSMutableString stringWithFormat:@"last Draw: %@\n least Draw: %@\n statisticalyLow: %@\n statisticalyHigh: %@\n statisticalyLow in This year: %@\n statisticalyHigh in This year: %@",[self.numberStatsController lastRecentlyDrawn], [self.numberStatsController leastRecentlyDrawn],[self.numberStatsController statisticalyLow], [self.numberStatsController statisticalyHigh],[self.numberStatsController statisticalyLowInThisYear],[self.numberStatsController statisticalyHighInThisYear]];
+        NSMutableString *statisticString = [NSMutableString stringWithFormat:@"last Draw: %@ \nleast Draw: %@ \nstatisticalyLow: %@ \nstatisticalyHigh: %@ \nstatisticalyLow in This year: %@ \nstatisticalyHigh in This year: %@",
+                                            [self formatNumbersToOneLine:[self.numberStatsController lastRecentlyDrawn]],
+                                            [self formatNumbersToOneLine:[self.numberStatsController leastRecentlyDrawn]],
+                                            [self formatNumbersToOneLine:[self.numberStatsController statisticalyLow]],
+                                            [self formatNumbersToOneLine:[self.numberStatsController statisticalyHigh]],
+                                             [self formatNumbersToOneLine:[self.numberStatsController statisticalyLowInThisYear]],
+                                             [self formatNumbersToOneLine:[self.numberStatsController statisticalyHighInThisYear]]];
         
         self.finalStatisticsText.text = statisticString;
         [self showStatisticView];
@@ -91,7 +97,8 @@
     NSDate *firstDayOfThisYear = [[NSCalendar currentCalendar] dateFromComponents:firstDayOfThisYearComponents];
     
     
-    NSLog(@"last Draw: %@", [self.numberStatsController lastRecentlyDrawn]);
+    NSLog(@"last Draw: \n");
+    NSLog(@"%@", [self formatNumbersToOneLine:[self.numberStatsController lastRecentlyDrawn]]);
     NSLog(@"least Draw: %@", [self.numberStatsController leastRecentlyDrawn]);
     NSLog(@"statisticalyLow: %@", [self.numberStatsController statisticalyLow]);
     NSLog(@"statisticalyHigh: %@", [self.numberStatsController statisticalyHigh]);
@@ -132,7 +139,18 @@
     [self.finalStatisticsText setHidden:YES];
 }
 
-
+- (NSString *)formatNumbersToOneLine:(NSArray <NSNumber *>*)numbers {
+    NSMutableString *resultString = [[NSMutableString alloc] init];
+    
+    for (NSNumber *currNumber in numbers) {
+        if ([resultString length] > 0) {
+            [resultString appendString:@","];
+        }
+        [resultString appendString:[NSString stringWithFormat:@"%@",currNumber]];
+    }
+    
+    return resultString;
+}
 
 
 @end

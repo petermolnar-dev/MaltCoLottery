@@ -10,10 +10,11 @@
 #import "PMODrawStorageProtocol.h"
 #import "PMOCalendarOperatedAbstract.h"
 
+
 /**
  Modelcontroller serving the statistical data from the draws
  */
-@interface PMONumberStatsModelController : PMOCalendarOperatedAbstract
+@interface PMONumberStatsModelController : NSObject
 
 
 /**

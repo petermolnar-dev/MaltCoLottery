@@ -94,7 +94,7 @@
                     modelsNeedsToBeProcessedCount--;
                     float percentage = (modelsCount*1.0-modelsNeedsToBeProcessedCount*1.0)/modelsCount*1.0;
                     [strongSelf.progressDelegate updateProgressWithPercentage:percentage];
-                    NSLog(@"InitialsModelCount = %ld /n", (long)modelsNeedsToBeProcessedCount);
+                    //NSLog(@"InitialsModelCount = %ld /n", (long)modelsNeedsToBeProcessedCount);
                     if (wasSuccessfull && downloadedNumbers) {
                         [strongSelf.privateModels setObject:currModelController forKey:currModelController.drawDate];
                     } else {
