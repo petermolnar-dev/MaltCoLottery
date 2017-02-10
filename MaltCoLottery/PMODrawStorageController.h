@@ -36,5 +36,11 @@ static NSString *const _Nonnull PMODrawStorageFilledUp = @"PMODrawStorageFilledU
 - (void)populateDrawsNumbers;
 
 
+/**
+ Disable the default init
+
+ @return instancetype, unavailable
+ */
+- (nullable instancetype)init NS_UNAVAILABLE;
 
 @end

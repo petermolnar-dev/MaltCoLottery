@@ -66,18 +66,6 @@
     return self;
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
-- (instancetype)init
-{
-    @throw [NSException exceptionWithName:@"Not designated initializer"
-                                   reason:@"Use [[PMONumberStatsModelController alloc] initWithNumberCount:arraySizeForStatistics: ]"
-                                 userInfo:nil];
-    return nil;
-}
-#pragma clang diagnostic pop
-
-
 #pragma mark - Accessors
 - (NSInteger)arraySizeForStatistics {
     if (_arraySizeForStatistics == 0) {

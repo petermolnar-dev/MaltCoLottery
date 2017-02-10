@@ -37,6 +37,6 @@
 #pragma clang diagnostic pop
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"Number: %@, drawcount:%lu, Drawdates: %@", self.number, [self.drawDates count], self.drawDates];
+    return [NSString stringWithFormat:@"Number: %@, drawcount:%u, Drawdates: %@", self.number, [self.drawDates count], self.drawDates];
 }
 @end

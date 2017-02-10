@@ -11,8 +11,6 @@
 
 @interface PMODrawStorageController()
 @property (strong, nonatomic, nullable) NSMutableDictionary <NSDate *,PMODrawModelController *> *privateModels;
-@property (unsafe_unretained, nonatomic) NSInteger failedCount;
-
 @end
 
 @implementation PMODrawStorageController
@@ -44,17 +42,6 @@
     
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
-- (instancetype)init
-{
-    @throw [NSException exceptionWithName:@"Not designated initializer"
-                                   reason:@"Use [[PMODrawStorageController alloc] initWithModelControllers:]"
-                                 userInfo:nil];
-    return nil;
-}
-#pragma clang diagnostic pop
-
 
 #pragma mark - Accessors
 - (NSDictionary *)models {
@@ -77,34 +64,42 @@
 }
 
 
+
 - (void)downloadAndParseDrawNumbers {
     __weak __typeof__(self) weakSelf = self;
     __block NSInteger modelsNeedsToBeProcessedCount = [self.privateModels count];
+    __block NSMutableArray *failedDates = [[NSMutableArray alloc] init];
+    __block NSInteger failedCount = 0;
+    
     NSInteger modelsCount = modelsNeedsToBeProcessedCount;
     NSArray *allModelKeys = [self.privateModels allKeys];
     NSOperationQueue *parsingQueue = [[NSOperationQueue alloc] init];
     
     [parsingQueue addOperationWithBlock:^{
+        __typeof__(self) strongSelf = weakSelf;
         for (NSDate * currModelControllerID in allModelKeys) {
             PMODrawModelController *currModelController = [self.privateModels objectForKey:currModelControllerID];
             
+            
             if (currModelController && currModelController.drawDate) {
                 void (^addModelControllerToStorage)(BOOL,  NSArray * _Nullable ) = ^(BOOL wasSuccessfull, NSArray *downloadedNumbers) {
-                    __typeof__(self) strongSelf = weakSelf;
+                    
+
                     modelsNeedsToBeProcessedCount--;
                     float percentage = (modelsCount*1.0-modelsNeedsToBeProcessedCount*1.0)/modelsCount*1.0;
                     [strongSelf.progressDelegate updateProgressWithPercentage:percentage];
-                    //NSLog(@"InitialsModelCount = %ld /n", (long)modelsNeedsToBeProcessedCount);
                     if (wasSuccessfull && downloadedNumbers) {
                         [strongSelf.privateModels setObject:currModelController forKey:currModelController.drawDate];
                     } else {
                         [strongSelf.privateModels removeObjectForKey:currModelController.drawDate];
-                        NSLog(@"Download wasn't succesfull or the numbers list is empty");
-                        strongSelf.failedCount++;
+                        NSLog(@"Date: %@: Download wasn't succesfull or the numbers list is empty", currModelController.drawDate);
+                        [failedDates addObject:currModelController.drawDate];
+                        failedCount++;
                     }
                     if (modelsNeedsToBeProcessedCount == 0) {
                         strongSelf.isAllModelParsed = true;
-                        NSLog(@"Failed count: %ld", strongSelf.failedCount);
+                        NSLog(@"Failed count: %ld", (long)failedCount);
+                        NSLog(@"Failed dates: %@",[failedDates sortedArrayUsingSelector:@selector(compare:)]);
                         [strongSelf notifyObservers];
                     }
                 };
@@ -114,8 +109,9 @@
                 [currModelController startPopulateDrawNumbersWithCompletionHandler:addModelControllerToStorage];
             }
         }
+        
     }];
-
+    
 }
 
 #pragma mark - Notifications

@@ -39,25 +39,13 @@
         _draw = draw;
     } else {
         @throw [NSException exceptionWithName:@"Not designated initializer"
-                                       reason:@"Use [[PMODrawModelController alloc] initWithDrawID: fromURL:]"
+                                       reason:@"Use [[PMODrawModelController alloc] initWithDrawDate]"
                                      userInfo:nil];
     }
     
     return self;
     
 }
-
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
-- (instancetype)init
-{
-    @throw [NSException exceptionWithName:@"Not designated initializer"
-                                   reason:@"Use [[PMODrawModelController alloc] initWithDrawID: fromURL:]"
-                                 userInfo:nil];
-    return nil;
-}
-#pragma clang diagnostic pop
 
 #pragma mark - Accessors
 
@@ -129,8 +117,8 @@
 }
 
 - (void)populateDrawFromDraw:(id<PMODrawProtocol>)draw {
-    //    TODO: Protect it from hacking, like nil csheck on the numbers.
-    //    Other draw can be easily inserted and can be faking as the original one.
+    //    TODO: Protect it from hacking, like nil check on the numbers.
+    //    Other draw can be easily inserted and can be fakeing as the original one.
     if (draw) {
         self.draw = draw;
     }

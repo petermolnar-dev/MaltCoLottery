@@ -18,10 +18,6 @@
 @implementation PMONumberStatsModelControllerTests
 
 
-- (void)testNonDesignatedInitializer {
-
-    XCTAssertThrows( [[PMONumberStatsModelController alloc] init]);
-}
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnonnull"

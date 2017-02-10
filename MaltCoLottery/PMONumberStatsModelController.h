@@ -53,4 +53,12 @@
 - (nullable NSNumber *)maxValueFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate;
 - (NSInteger)drawCountAllTimesForNumber:(nonnull NSNumber *)number;
 
+
+/**
+ Disable the default init
+
+ @return unavailable.
+ */
+- (nullable instancetype)init NS_UNAVAILABLE;
+
 @end

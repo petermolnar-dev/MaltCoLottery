@@ -190,6 +190,9 @@
 		C71DC5791CEF99F900EACB3D /* MaltCoLottery */ = {
 			isa = PBXGroup;
 			children = (
+				C7F7C80C1E4DDA8000816176 /* ViewControllers */,
+				C7F7C80B1E4DDA5A00816176 /* UI */,
+				C7F7C80A1E4DDA5100816176 /* Resources */,
 				C7F291311DDA4FBD0036A798 /* Statistic Classes */,
 				C77922801D6113080075319F /* Abstract Classes */,
 				C7A838E91D5856680095B261 /* Factories */,
@@ -199,13 +202,6 @@
 				C7AAF7F61D54684800D98AD3 /* HTML Parser */,
 				C7AAF7F21D54680A00D98AD3 /* Network Operations */,
 				C7AAF7F11D52466000D98AD3 /* Generators */,
-				C71DC57E1CEF99F900EACB3D /* AppDelegate.m */,
-				C71DC57D1CEF99F900EACB3D /* AppDelegate.h */,
-				C71DC5801CEF99F900EACB3D /* ViewController.h */,
-				C71DC5811CEF99F900EACB3D /* ViewController.m */,
-				C71DC5831CEF99F900EACB3D /* Main.storyboard */,
-				C71DC5861CEF99F900EACB3D /* Assets.xcassets */,
-				C71DC5881CEF99F900EACB3D /* LaunchScreen.storyboard */,
 				C71DC58B1CEF99F900EACB3D /* Info.plist */,
 				C71DC57A1CEF99F900EACB3D /* Supporting Files */,
 			);
@@ -358,6 +354,34 @@
 				C7F291401DDA64CC0036A798 /* PMOStatisticallyMinMaxValue.m */,
 			);
 			name = "Statistic Classes";
+			sourceTree = "<group>";
+		};
+		C7F7C80A1E4DDA5100816176 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C71DC57E1CEF99F900EACB3D /* AppDelegate.m */,
+				C71DC57D1CEF99F900EACB3D /* AppDelegate.h */,
+				C71DC5861CEF99F900EACB3D /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C7F7C80B1E4DDA5A00816176 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C71DC5831CEF99F900EACB3D /* Main.storyboard */,
+				C71DC5881CEF99F900EACB3D /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		C7F7C80C1E4DDA8000816176 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C71DC5801CEF99F900EACB3D /* ViewController.h */,
+				C71DC5811CEF99F900EACB3D /* ViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

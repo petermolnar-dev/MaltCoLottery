@@ -83,4 +83,12 @@
  */
 - (void)populateDrawFromDraw:(nonnull id<PMODrawProtocol>)draw;
 
+
+/**
+ Disable the default init
+
+ @return unavailable
+ */
+- (nullable instancetype)init NS_UNAVAILABLE;
+
 @end
