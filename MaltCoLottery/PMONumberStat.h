@@ -16,5 +16,6 @@
 
 - (nullable instancetype)initWithNumber:(nonnull NSNumber *)number drawDates:(nullable NSArray <NSDate *>*)drawDates NS_DESIGNATED_INITIALIZER;
 
+- (nullable instancetype)init NS_UNAVAILABLE;
 
 @end

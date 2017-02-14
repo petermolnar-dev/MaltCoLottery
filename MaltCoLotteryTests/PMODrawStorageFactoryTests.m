@@ -27,7 +27,7 @@
 }
 
 - (void)testFactoryBuildsModelController {
-    PMODrawStorageController *storage = [self.factory buildStorage];
+    PMODrawStorageController *storage = [self.factory buildStorageWithExistingModelControllers:nil];
     XCTAssert(storage && [storage isKindOfClass:[PMODrawStorageController class]] );
     
 }
@@ -60,7 +60,7 @@
                              }];
     
     
-    PMODrawStorageController *storage = [self.factory buildStorageFromDate:fromDate toDate:toDate];
+    PMODrawStorageController *storage = [self.factory buildStorageFromDate:fromDate toDate:toDate withExistingModelControllers:nil];
     [storage populateDrawsNumbers];
     
     NSLog(@"Storage created: %@", storage);

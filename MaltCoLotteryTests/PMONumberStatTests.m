@@ -26,10 +26,6 @@
     [super tearDown];
 }
 
-- (void)testNonDesignatedInitilizerThrowsException {
-    XCTAssertThrows([self.numberStats init]);
-}
-
 
 //Save the diagnostic state
 #pragma clang diagnostic push

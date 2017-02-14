@@ -77,5 +77,23 @@
     return  [calendar dateFromComponents:firstDrawDateComponents];
 }
 
+- (void)testStorageSave {
+    NSMutableArray *mockModels = [NSMutableArray array];
+    NSDate *drawDate = [self createDateFromComponentsWithYear:2016 withMonth:9 withDay:7];
+    PMODrawModelController *mockModelController =[[PMODrawModelController alloc] initWithDrawDate:drawDate];
+    [mockModels addObject:mockModelController];
+
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:mockModels];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"drawModels"];
+    
+    NSData *dataRead = [[NSUserDefaults standardUserDefaults] objectForKey:@"drawModels"];
+    
+    NSArray *readDraws = [NSKeyedUnarchiver unarchiveObjectWithData:dataRead];
+    PMODrawModelController *readController = [readDraws firstObject];
+    NSLog(@"The readDraws.drawdte: %@", readController.drawDate);
+    
+    XCTAssertNotNil(readDraws);
+    
+}
 
 @end

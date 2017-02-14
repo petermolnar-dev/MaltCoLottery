@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "PMODrawStorageFactory.h"
 #import "PMONumberStatsModelController.h"
+#import "PMOPermanentStorage.h"
 
 #define MAX_NUMBERS_IN_GAME @45
 #define COUNT_OF_NUMBERS_PROPOSED 5
@@ -48,8 +49,9 @@
 
 - (PMODrawStorageController *)storageController {
     if (!_storageController) {
+        NSArray *loadedControllers = [PMOPermanentStorage loadModelStorage];
         PMODrawStorageFactory *storageFactory = [[PMODrawStorageFactory alloc] init];
-        _storageController = [storageFactory buildStorage];
+        _storageController = [storageFactory buildStorageWithExistingModelControllers:loadedControllers];
         _storageController.progressDelegate = self;
     }
     
@@ -70,6 +72,7 @@
 
 - (void)didStorageFilledUp {
     [self.numberStatsController updateStatisticFromNumberStorage:self.storageController];
+    [PMOPermanentStorage saveModelStorage:[self.storageController.models allValues]];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         

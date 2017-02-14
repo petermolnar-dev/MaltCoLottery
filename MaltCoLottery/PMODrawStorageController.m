@@ -27,7 +27,7 @@
         if (models) {
             for (PMODrawModelController * currModelController in models) {
                 if ([_privateModels objectForKey:[currModelController drawDate]]) {
-                    NSLog(@"There is already a draw with that date");
+//                    NSLog(@"There is already a draw with that date");
                 } else {
                     [_privateModels setObject:currModelController forKey:currModelController.drawDate];
                 }
@@ -80,8 +80,11 @@
         for (NSDate * currModelControllerID in allModelKeys) {
             PMODrawModelController *currModelController = [self.privateModels objectForKey:currModelControllerID];
             
-            
-            if (currModelController && currModelController.drawDate) {
+            if (currModelController && currModelController.drawDate && [currModelController.numbers count]) {
+                modelsNeedsToBeProcessedCount--;
+                float percentage = (modelsCount*1.0-modelsNeedsToBeProcessedCount*1.0)/modelsCount*1.0;
+                 [self.progressDelegate updateProgressWithPercentage:percentage];
+            } else if (currModelController && currModelController.drawDate) {
                 void (^addModelControllerToStorage)(BOOL,  NSArray * _Nullable ) = ^(BOOL wasSuccessfull, NSArray *downloadedNumbers) {
                     
 
@@ -92,14 +95,13 @@
                         [strongSelf.privateModels setObject:currModelController forKey:currModelController.drawDate];
                     } else {
                         [strongSelf.privateModels removeObjectForKey:currModelController.drawDate];
-                        NSLog(@"Date: %@: Download wasn't succesfull or the numbers list is empty", currModelController.drawDate);
                         [failedDates addObject:currModelController.drawDate];
                         failedCount++;
                     }
                     if (modelsNeedsToBeProcessedCount == 0) {
                         strongSelf.isAllModelParsed = true;
-                        NSLog(@"Failed count: %ld", (long)failedCount);
-                        NSLog(@"Failed dates: %@",[failedDates sortedArrayUsingSelector:@selector(compare:)]);
+//                        NSLog(@"Failed count: %ld", (long)failedCount);
+//                        NSLog(@"Failed dates: %@",[failedDates sortedArrayUsingSelector:@selector(compare:)]);
                         [strongSelf notifyObservers];
                     }
                 };

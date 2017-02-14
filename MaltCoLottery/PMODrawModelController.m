@@ -124,4 +124,20 @@
     }
 }
 
+#pragma mark - NSCoding protocoll implementation
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.drawDate forKey:@"drawDate"];
+    [aCoder encodeObject:self.numbers forKey:@"numbers"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    NSArray <NSNumber *> *numbers =[aDecoder decodeObjectForKey:@"numbers"];
+    NSDate *drawDate = [aDecoder decodeObjectForKey:@"drawDate"];
+    PMODraw *newDraw = [[PMODraw alloc] initWithDrawDate:drawDate];
+    newDraw.numbers = numbers;
+    
+    return [self initWithExisitingDraw:newDraw];
+    
+}
+
 @end

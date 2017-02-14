@@ -43,6 +43,9 @@
             NSDate *dateAfterCurrentDate = [fromDate dateByAddingTimeInterval:secondsPerDay];
             [resultArray addObject:dateAfterCurrentDate];
         }
+        // Fix for MaltCo lottery draw 02/01/2018. The drawn was on 30/12/2007
+        [resultArray addObject:[self createDateFromComponentsWithYear:2007 withMonth:12 withDay:30]];
+        
         NSTimeInterval secondsInWeek = 7 * 24 * 60 * 60;
         fromDate = [fromDate dateByAddingTimeInterval:secondsInWeek];
     }

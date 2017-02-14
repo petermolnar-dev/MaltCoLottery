@@ -25,18 +25,8 @@
     return self;
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
-- (instancetype)init
-{
-    @throw [NSException exceptionWithName:@"Not a designated initializer"
-                                   reason:@"Use [[PMONumberStats alloc] initWithNumber: drawDates:]"
-                                 userInfo:nil];
-    return nil;
-}
-#pragma clang diagnostic pop
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"Number: %@, drawcount:%u, Drawdates: %@", self.number, [self.drawDates count], self.drawDates];
+    return [NSString stringWithFormat:@"Number: %@, drawcount:%lu, Drawdates: %@", self.number, [self.drawDates count], self.drawDates];
 }
 @end

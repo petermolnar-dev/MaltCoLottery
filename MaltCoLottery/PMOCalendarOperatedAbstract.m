@@ -90,7 +90,7 @@
         result = true;
     }
     //    Wednesday	29/06/2016	Saint Peter & Saint Paul
-    if ([monthAndDay month] == 6 && [monthAndDay day] == 26) {
+    if ([monthAndDay month] == 6 && [monthAndDay day] == 29) {
         result = true;
     }
     //    Monday	15/08/2016	Assumption of Mary

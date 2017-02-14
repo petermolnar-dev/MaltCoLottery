@@ -16,7 +16,7 @@
 
  @return PMOStrorageController with all of the draws until today
  */
-- (nonnull PMODrawStorageController *)buildStorage;
+- (nonnull PMODrawStorageController *)buildStorageWithExistingModelControllers:(nullable NSArray <PMODrawModelController*>*)exisitingModelControllers ;
 
 /**
  Build storage from the draws from |fromDate| until |toDate|
@@ -26,6 +26,6 @@
 
  @return PMOStrorageController with all of the draws between the fromDate toDate range
  */
-- (nonnull PMODrawStorageController *)buildStorageFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate;
+- (nonnull PMODrawStorageController *)buildStorageFromDate:(nonnull NSDate *)fromDate toDate:(nonnull NSDate *)toDate withExistingModelControllers:(nullable NSArray <PMODrawModelController*>*)exisitingModelControllers;
 
 @end

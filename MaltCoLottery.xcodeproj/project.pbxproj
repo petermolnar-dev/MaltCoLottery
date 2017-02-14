@@ -34,6 +34,7 @@
 		C7AAF7F01D52457200D98AD3 /* PMODrawURLGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7EF1D52457200D98AD3 /* PMODrawURLGenerator.m */; };
 		C7AAF7FD1D5726B500D98AD3 /* PMODraw.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7FC1D5726B500D98AD3 /* PMODraw.m */; };
 		C7AAF7FF1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AAF7FE1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m */; };
+		C7AB99831E5100B800E2A4C7 /* PMOPermanentStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AB99821E5100B800E2A4C7 /* PMOPermanentStorage.m */; };
 		C7D12FC61D59AA3400D47DF5 /* PMODateGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */; };
 		C7D12FC91D59ABF100D47DF5 /* PMODrawStorageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */; };
 		C7F291341DDA501D0036A798 /* PMOStatisticAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F291331DDA501D0036A798 /* PMOStatisticAbstract.m */; };
@@ -120,6 +121,8 @@
 		C7AAF7FB1D5726B500D98AD3 /* PMODraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODraw.h; sourceTree = "<group>"; };
 		C7AAF7FC1D5726B500D98AD3 /* PMODraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODraw.m; sourceTree = "<group>"; };
 		C7AAF7FE1D5728EE00D98AD3 /* PMOUrlGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOUrlGeneratorTests.m; sourceTree = "<group>"; };
+		C7AB99811E5100B800E2A4C7 /* PMOPermanentStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMOPermanentStorage.h; sourceTree = "<group>"; };
+		C7AB99821E5100B800E2A4C7 /* PMOPermanentStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMOPermanentStorage.m; sourceTree = "<group>"; };
 		C7D12FC51D59AA3400D47DF5 /* PMODateGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODateGeneratorTests.m; sourceTree = "<group>"; };
 		C7D12FC71D59ABF100D47DF5 /* PMODrawStorageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMODrawStorageFactory.h; sourceTree = "<group>"; };
 		C7D12FC81D59ABF100D47DF5 /* PMODrawStorageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMODrawStorageFactory.m; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 		C71DC56E1CEF99F900EACB3D = {
 			isa = PBXGroup;
 			children = (
+				C7AB99811E5100B800E2A4C7 /* PMOPermanentStorage.h */,
+				C7AB99821E5100B800E2A4C7 /* PMOPermanentStorage.m */,
 				C71DC5791CEF99F900EACB3D /* MaltCoLottery */,
 				C71DC5931CEF99F900EACB3D /* MaltCoLotteryTests */,
 				C71DC59E1CEF99F900EACB3D /* MaltCoLotteryUITests */,
@@ -526,6 +531,7 @@
 				C77922831D61132F0075319F /* PMOCalendarOperatedAbstract.m in Sources */,
 				C7F6B96B1D98F68900645628 /* PMOURLDataDownloaderWithBlock.m in Sources */,
 				C71DC5821CEF99F900EACB3D /* ViewController.m in Sources */,
+				C7AB99831E5100B800E2A4C7 /* PMOPermanentStorage.m in Sources */,
 				C7F291411DDA64CC0036A798 /* PMOStatisticallyMinMaxValue.m in Sources */,
 				C771C7301DAE8FA500C592D4 /* PMONumberStatsModelController.m in Sources */,
 				C7F2913B1DDA62C80036A798 /* PMOStatisticallyLowOrHigh.m in Sources */,

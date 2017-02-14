@@ -15,7 +15,7 @@
 /**
  The PMODrawModelController is a Controller layer on the top of the PMODraw. PMODraw is just a pure data structure, which can be accessed via PMODrawModelController.
  */
-@interface PMODrawModelController : PMOCalendarOperatedAbstract <PMODrawDataProtocol>
+@interface PMODrawModelController : PMOCalendarOperatedAbstract <PMODrawDataProtocol, NSCoding>
 
 
 /**
